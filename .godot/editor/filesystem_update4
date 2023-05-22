@@ -1,2 +1,4 @@
+res://Player/Player.tscn
+res://Player/Movement.gd
 res://World/Main.tscn
-res://World/WorldEnv.tres
+res://Player/Staff/Staff.tscn

@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://vg0a2afxvfi6"]
+
+[ext_resource type="Texture2D" uid="uid://dhmsncx56xitr" path="res://Player/Staff/Staff_Hilt.png" id="1_brqv6"]
+[ext_resource type="Texture2D" uid="uid://8ttvbmjiiruo" path="res://Player/Staff/Staff_Gem.png" id="2_5lxtq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ad8m"]
+size = Vector2(6, 37)
+
+[sub_resource type="Animation" id="Animation_ytmro"]
+resource_name = "Staff_gem_move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaffSprite/GemSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -9.5), Vector2(0, -10.5), Vector2(0, -9.5)]
+}
+
+[sub_resource type="Animation" id="Animation_umquh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaffSprite/GemSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -9.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dc5t8"]
+_data = {
+"RESET": SubResource("Animation_umquh"),
+"Staff_gem_move": SubResource("Animation_ytmro")
+}
+
+[node name="Staff" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_2ad8m")
+
+[node name="StaffSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_brqv6")
+
+[node name="GemSprite" type="Sprite2D" parent="StaffSprite"]
+position = Vector2(0, -9.5)
+texture = ExtResource("2_5lxtq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Staff_gem_move"
+libraries = {
+"": SubResource("AnimationLibrary_dc5t8")
+}

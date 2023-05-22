@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=3 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
+[ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
 
 [node name="Main" type="Node2D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_shwuh")
+
+[node name="Player" parent="." instance=ExtResource("2_hyuqm")]
+FRICTION = 30
+MAX_SPEED = 1200

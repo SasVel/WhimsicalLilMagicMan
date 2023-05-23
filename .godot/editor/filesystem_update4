@@ -1,7 +1,10 @@
 res://Player/Player.tscn
-res://Player/PlayerFrames.tres
+res://World/Main.tscn
 res://Player/Staff/Staff.tscn
 res://Shaders/RetroTvShader.tscn
 res://Shaders/VignetteShader.tscn
 res://Shaders/GlobalShaders.tscn
-res://World/Main.tscn
+res://World/WorldEnv.tres
+res://Shaders/RetroTvShader.gdshader
+res://Player/Staff/Staff.gd
+res://World/Camera/MainCamera.tscn

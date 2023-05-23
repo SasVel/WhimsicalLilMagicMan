@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vg0a2afxvfi6"]
+[gd_scene load_steps=9 format=3 uid="uid://vg0a2afxvfi6"]
 
 [ext_resource type="Texture2D" uid="uid://dhmsncx56xitr" path="res://Player/Staff/Staff_Hilt.png" id="1_brqv6"]
+[ext_resource type="Script" path="res://Player/Staff/Staff.gd" id="1_ojjmi"]
 [ext_resource type="Texture2D" uid="uid://8ttvbmjiiruo" path="res://Player/Staff/Staff_Gem.png" id="2_5lxtq"]
+[ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="4_nubqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ad8m"]
 size = Vector2(6, 37)
@@ -44,13 +46,17 @@ _data = {
 "Staff_gem_move": SubResource("Animation_ytmro")
 }
 
-[node name="Staff" type="Area2D"]
+[node name="Staff" type="StaticBody2D"]
+collision_layer = 32
+collision_mask = 4
+script = ExtResource("1_ojjmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6.5)
+position = Vector2(0, -48.5)
 shape = SubResource("RectangleShape2D_2ad8m")
 
 [node name="StaffSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -42)
 scale = Vector2(2, 2)
 texture = ExtResource("1_brqv6")
 
@@ -63,3 +69,7 @@ autoplay = "Staff_gem_move"
 libraries = {
 "": SubResource("AnimationLibrary_dc5t8")
 }
+
+[node name="HitBox" parent="." instance=ExtResource("4_nubqe")]
+collision_layer = 2
+collision_mask = 0

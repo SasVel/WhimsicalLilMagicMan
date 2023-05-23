@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cd52a7v1fir0t"]
+
+[node name="MainCamera" type="Camera2D"]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

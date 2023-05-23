@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=6 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
 [ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
+[ext_resource type="PackedScene" uid="uid://x4madpx2a5xc" path="res://UI/MainOverlay/MainOverlay.tscn" id="3_aiwwy"]
+[ext_resource type="Shader" path="res://Shaders/RetroTvShader.gdshader" id="4_vhxy1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a24o1"]
+shader = ExtResource("4_vhxy1")
 
 [node name="Main" type="Node2D"]
 
@@ -9,5 +14,11 @@
 environment = ExtResource("1_shwuh")
 
 [node name="Player" parent="." instance=ExtResource("2_hyuqm")]
+position = Vector2(329, 183)
 FRICTION = 30
 MAX_SPEED = 1200
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MainOverlay" parent="UI" instance=ExtResource("3_aiwwy")]
+material = SubResource("ShaderMaterial_a24o1")

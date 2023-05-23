@@ -1,4 +1,2 @@
-res://Player/Player.tscn
-res://Player/Movement.gd
 res://World/Main.tscn
-res://Player/Staff/Staff.tscn
+res://Player/PlayerFrames.tres

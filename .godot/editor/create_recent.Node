@@ -1,3 +1,6 @@
+TileMap
+Label
+ColorRect
 AnimationTree
 AnimationPlayer
 CollisionShape2D

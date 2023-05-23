@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Whimsicle_Lil_Magic_Man"
+config/name="Magic Man"
 run/main_scene="res://World/Main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalShaders="*res://Shaders/GlobalShaders.tscn"
 
 [display]
 
@@ -22,6 +26,10 @@ window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="res://Fonts/m3x6.ttf"
 
 [input]
 

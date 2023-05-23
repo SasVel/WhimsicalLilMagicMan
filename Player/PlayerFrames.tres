@@ -1,9 +1,26 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://bkw57ne00h0tj"]
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bkw57ne00h0tj"]
+
+[ext_resource type="Texture2D" uid="uid://rn5ogv6eifx4" path="res://Player/Assets/Wiz6.png" id="1_sfg4h"]
+[ext_resource type="Texture2D" uid="uid://cdh0vyky4sbc" path="res://Player/Assets/Wiz2.png" id="2_gskf2"]
+[ext_resource type="Texture2D" uid="uid://db502o6srnj1r" path="res://Player/Assets/Wiz3.png" id="3_x1ph0"]
+[ext_resource type="Texture2D" uid="uid://b6rkk6m76hmcj" path="res://Player/Assets/Wiz7.png" id="4_rym2u"]
 
 [resource]
 animations = [{
-"frames": [],
-"loop": false,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sfg4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gskf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x1ph0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rym2u")
+}],
+"loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 5.0
 }]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=10 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
 [ext_resource type="Texture2D" uid="uid://b60rv3kxe4vue" path="res://World/Tiles/dungeontileset-extended.png" id="2_c7d2c"]
 [ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
 [ext_resource type="PackedScene" uid="uid://x4madpx2a5xc" path="res://UI/MainOverlay/MainOverlay.tscn" id="3_aiwwy"]
 [ext_resource type="Shader" path="res://Shaders/RetroTvShader.gdshader" id="4_vhxy1"]
+[ext_resource type="PackedScene" uid="uid://5gmcfs2ysvs1" path="res://Enemies/Goblin/EnemyGoblin.tscn" id="6_75cvx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wxad"]
 texture = ExtResource("2_c7d2c")
@@ -1034,6 +1035,9 @@ layer_1/y_sort_enabled = true
 layer_1/y_sort_origin = 5
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(524304, 65536, 1, 524305, 65536, 1, 524306, 131072, 1, 524307, 131072, 1, 524308, 131072, 1, 524309, 131072, 1, 524310, 131072, 1, 524311, 65536, 1, 524312, 65536, 1, 458768, 131072, 1, 458769, 131072, 1, 458770, 65536, 1, 458771, 131072, 1, 458772, 131072, 1, 458773, 131072, 1, 458774, 131072, 1, 458775, 131072, 1, 458776, 131072, 1, 393232, 131072, 0, 393233, 131072, 0, 393234, 65536, 0, 393235, 65536, 0, 393236, 131072, 0, 393237, 131072, 0, 393238, 131072, 0, 393239, 196608, 0, 393240, 65536, 0, 524313, 196608, 13, 458777, 196608, 13, 393241, 196608, 12, 589849, 0, 13, 655385, 0, 13, 720921, 0, 13, 786457, 0, 13, 851993, 0, 13, 917529, 0, 13, 983065, 196608, 14, 1048601, 196608, 1, 1048600, 131072, 1, 1048599, 131072, 1, 1048598, 131072, 1, 1048597, 131072, 1, 1048596, 131072, 1, 1048595, 131072, 1, 1048594, 131072, 1, 1048593, 131072, 1, 1048592, 131072, 1, 983064, 131072, 0, 983063, 131072, 0, 983062, 131072, 0, 983061, 131072, 0, 983060, 131072, 0, 983059, 131072, 0, 983058, 131072, 0, 983057, 131072, 0, 983056, 131072, 0, 1114137, 196608, 1, 1114136, 131072, 1, 1114135, 131072, 1, 1114134, 131072, 1, 1114133, 131072, 1, 1114132, 131072, 1, 1114131, 131072, 1, 1114130, 131072, 1, 1114129, 131072, 1, 1114128, 131072, 1, 983055, 131072, 14, 917519, 65536, 13, 851983, 65536, 13, 786447, 65536, 13, 720911, 65536, 13, 655375, 65536, 13, 589839, 65536, 13, 524303, 131072, 13, 458767, 131072, 13, 393231, 131072, 12, 1048591, 131072, 1, 1114127, 131072, 1)
+
+[node name="EnemyGoblin" parent="." instance=ExtResource("6_75cvx")]
+position = Vector2(376, 188)
 
 [node name="Player" parent="." instance=ExtResource("2_hyuqm")]
 position = Vector2(329, 183)

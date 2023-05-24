@@ -1,9 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://jl61vuqhndiy"]
+[gd_scene load_steps=31 format=3 uid="uid://jl61vuqhndiy"]
 
 [ext_resource type="Script" path="res://Player/Movement.gd" id="1_mc25c"]
 [ext_resource type="SpriteFrames" uid="uid://bkw57ne00h0tj" path="res://Player/PlayerFrames.tres" id="2_oncrt"]
 [ext_resource type="PackedScene" uid="uid://cd52a7v1fir0t" path="res://World/Camera/MainCamera.tscn" id="2_s4cnw"]
+[ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="5_03hwv"]
 [ext_resource type="PackedScene" uid="uid://vg0a2afxvfi6" path="res://Player/Staff/Staff.tscn" id="6_8wy8g"]
+[ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="6_ovi2f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwx1s"]
 radius = 5.0
@@ -287,6 +289,7 @@ transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_a
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_xskl6"]
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_mc25c")
 FRICTION = 20
@@ -307,6 +310,14 @@ position = Vector2(0, 5)
 position = Vector2(0, 10)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_fwx1s")
+
+[node name="HitBox" parent="." instance=ExtResource("5_03hwv")]
+collision_layer = 2
+collision_mask = 16
+
+[node name="HurtBox" parent="." instance=ExtResource("6_ovi2f")]
+collision_layer = 8
+collision_mask = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

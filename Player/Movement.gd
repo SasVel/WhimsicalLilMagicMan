@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var ACCELERATION = 60;
 @export var FRICTION = 40;
@@ -57,5 +58,6 @@ func _physics_process(delta):
 		MOVE:
 			move_state(delta)
 		
+	GlobalInfo.playerPos = self.position
 	move_and_slide()
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmsncx56xitr"
-path="res://.godot/imported/Staff_Hilt.png-834689d41a87c1d7ff3b615b1b578b58.ctex"
+uid="uid://bllflj4k84vmn"
+path="res://.godot/imported/goblin_run_spritesheet.png-39751937e400e8f80f41b70975cd91ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Staff/Staff_Hilt.png"
-dest_files=["res://.godot/imported/Staff_Hilt.png-834689d41a87c1d7ff3b615b1b578b58.ctex"]
+source_file="res://Enemies/Goblin/Assets/goblin_run_spritesheet.png"
+dest_files=["res://.godot/imported/goblin_run_spritesheet.png-39751937e400e8f80f41b70975cd91ee.ctex"]
 
 [params]
 

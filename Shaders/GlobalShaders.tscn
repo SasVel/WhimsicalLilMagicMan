@@ -8,5 +8,7 @@ process_mode = 3
 layer = 10
 
 [node name="RetroTvShader" parent="." instance=ExtResource("1_quchw")]
+visible = false
 
 [node name="VignetteShader" parent="." instance=ExtResource("2_kntc3")]
+visible = false

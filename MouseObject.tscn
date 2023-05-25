@@ -12,7 +12,7 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 
 [node name="MouseObject" type="CanvasLayer"]
-layer = 100
+layer = 9
 
 [node name="MouseObj" type="Node2D" parent="."]
 script = ExtResource("1_lp664")

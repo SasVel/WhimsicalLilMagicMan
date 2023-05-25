@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://67wo2s6dt06v"]
+
+[ext_resource type="Shader" path="res://Shaders/MagicDimensionShader.gdshader" id="1_er6eh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t8ine"]
+noise_type = 0
+seed = 8
+frequency = 0.016
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p6h77"]
+width = 640
+height = 360
+noise = SubResource("FastNoiseLite_t8ine")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esdi2"]
+shader = ExtResource("1_er6eh")
+shader_parameter/distortionTexture = SubResource("NoiseTexture2D_p6h77")
+
+[node name="MagicDimensionShader" type="ColorRect"]
+material = SubResource("ShaderMaterial_esdi2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

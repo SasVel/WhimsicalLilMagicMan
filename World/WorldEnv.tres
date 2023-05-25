@@ -1,6 +1,8 @@
 [gd_resource type="Environment" format=3 uid="uid://t4qlgjmpxstg"]
 
 [resource]
-background_mode = 1
-background_color = Color(0.218758, 0.203561, 0.509386, 1)
+background_mode = 3
+background_color = Color(0.219608, 0.203922, 0.509804, 1)
 tonemap_mode = 1
+glow_blend_mode = 0
+glow_hdr_threshold = 2.06

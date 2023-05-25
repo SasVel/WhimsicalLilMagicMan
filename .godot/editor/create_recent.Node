@@ -1,3 +1,4 @@
+ColorRect
 RigidBody2D
 Node2D
 CanvasLayer
@@ -11,7 +12,6 @@ Camera2D
 StaticBody2D
 TileMap
 Label
-ColorRect
 AnimationTree
 CharacterBody2D
 WorldEnvironment

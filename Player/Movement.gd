@@ -57,7 +57,13 @@ func _physics_process(delta):
 			idle_state(delta)
 		MOVE:
 			move_state(delta)
-		
+	
+	if Input.is_action_just_pressed("world_change"):
+		if GlobalInfo.worldState == GlobalInfo.worldStateEnum.MAIN:
+			GlobalInfo.worldState = GlobalInfo.worldStateEnum.MAGIC
+		else:
+			GlobalInfo.worldState = GlobalInfo.worldStateEnum.MAIN
+	
 	GlobalInfo.playerPos = self.position
 	move_and_slide()
 	

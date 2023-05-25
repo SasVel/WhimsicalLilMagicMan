@@ -13,8 +13,8 @@ script = ExtResource("1_i75yj")
 [node name="RetroTvShader" parent="." instance=ExtResource("1_quchw")]
 visible = false
 
-[node name="VignetteShader" parent="." instance=ExtResource("2_kntc3")]
-visible = false
-
 [node name="MagicDimensionShader" parent="." instance=ExtResource("3_7fwms")]
 visible = false
+y_sort_enabled = true
+
+[node name="VignetteShader" parent="." instance=ExtResource("2_kntc3")]

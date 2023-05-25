@@ -3,12 +3,14 @@ extends RigidBody2D
 @onready var sprites = $MainSprite
 @export var SPEED = 50
 
-
 enum {
 	IDLE,
 	RUN
 }
 var state = IDLE
+
+func _ready():
+	GlobalInfo.world_state_changed.connect(world_state_changed)
 
 func _physics_process(delta):
 	match state:
@@ -33,3 +35,8 @@ func _on_player_detection_zone_body_entered(body):
 func _on_player_detection_zone_body_exited(body):
 	if body is Player:
 		state = IDLE
+
+func world_state_changed(val):
+	if val == 0:
+		sprites.material.set_shader_param("flash_opacity", 0.7)
+		#sprites.material.set_shader_param("flash_color", Color.hex(e82f00))

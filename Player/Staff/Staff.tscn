@@ -66,6 +66,7 @@ texture = ExtResource("2_wkuc6")
 
 [node name="GemSprite" type="Sprite2D" parent="StaffSprite"]
 position = Vector2(0, -9.5)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_31oct")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

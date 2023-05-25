@@ -1,11 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://5gmcfs2ysvs1"]
+[gd_scene load_steps=24 format=3 uid="uid://5gmcfs2ysvs1"]
 
 [ext_resource type="Script" path="res://Enemies/Goblin/EnemyGoblin.gd" id="1_ora1r"]
 [ext_resource type="Texture2D" uid="uid://bi40feqdeyljc" path="res://Enemies/Goblin/Assets/goblin_idle_spritesheet.png" id="1_qjhuy"]
+[ext_resource type="Shader" path="res://Shaders/BlinkShader.gdshader" id="1_t3juo"]
 [ext_resource type="PackedScene" uid="uid://cm5wfph8jbxdj" path="res://Stats/Stats.tscn" id="2_j85s0"]
 [ext_resource type="Texture2D" uid="uid://bllflj4k84vmn" path="res://Enemies/Goblin/Assets/goblin_run_spritesheet.png" id="2_teonk"]
 [ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="5_eyrfi"]
 [ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="6_7wbxo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhtbg"]
+shader = ExtResource("1_t3juo")
+shader_parameter/flash_color = Color(0.909804, 0.184314, 0, 1)
+shader_parameter/flash_opacity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8rc2"]
 atlas = ExtResource("1_qjhuy")
@@ -109,7 +115,7 @@ radius = 7.0
 height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x28b"]
-radius = 60.1332
+radius = 120.337
 
 [node name="EnemyGoblin" type="RigidBody2D"]
 y_sort_enabled = true
@@ -124,6 +130,7 @@ script = ExtResource("1_ora1r")
 max_health = 2
 
 [node name="MainSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_uhtbg")
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_exm7l")
 animation = &"Idle"
@@ -132,10 +139,12 @@ frame = 3
 frame_progress = 0.972925
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_aacr7")
 
 [node name="PlayerDetectionZone" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 2
 

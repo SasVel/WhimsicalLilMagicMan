@@ -8,6 +8,7 @@
 [node name="GlobalShaders" type="CanvasLayer"]
 process_mode = 3
 layer = 10
+visible = false
 script = ExtResource("1_i75yj")
 
 [node name="RetroTvShader" parent="." instance=ExtResource("1_quchw")]

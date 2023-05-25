@@ -6,7 +6,8 @@ class_name Player
 @export var SPEED = 500;
 @export var MAX_SPEED = 1500;
 var CURR_SPEED = SPEED;
-
+@onready var staff = $Staff
+@onready var Bullet = preload("res://MagicBullet/MagicBullet.tscn")
 enum {
 	IDLE,
 	MOVE
@@ -64,6 +65,13 @@ func _physics_process(delta):
 		else:
 			GlobalInfo.worldState = GlobalInfo.worldStateEnum.MAIN
 	
+	if Input.is_action_just_pressed("shoot"):
+		shoot_bullet()
+	
 	GlobalInfo.playerPos = self.position
 	move_and_slide()
 	
+func shoot_bullet():
+	var bullet = Bullet.instantiate()
+	bullet.position = staff.gemPos
+	staff.add_child(bullet)

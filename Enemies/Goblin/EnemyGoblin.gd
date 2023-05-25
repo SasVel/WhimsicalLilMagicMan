@@ -37,6 +37,8 @@ func _on_player_detection_zone_body_exited(body):
 		state = IDLE
 
 func world_state_changed(val):
-	if val == 0:
-		sprites.material.set_shader_param("flash_opacity", 0.7)
-		#sprites.material.set_shader_param("flash_color", Color.hex(e82f00))
+	if val == 1:
+		sprites.material.set_shader_parameter("flash_opacity", 0.7)
+		sprites.material.set_shader_parameter("flash_color", Color.DARK_RED)
+	else:
+		sprites.material.set_shader_parameter("flash_opacity", 0)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw0kpwwysqsv4"]
+
+[ext_resource type="Script" path="res://World/Rooms/RoomFog.gd" id="1_w21vv"]
+
+[node name="RoomFog" type="ColorRect"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 640.0
+offset_bottom = 352.0
+mouse_filter = 2
+color = Color(0.137255, 0.12549, 0.341176, 1)
+script = ExtResource("1_w21vv")

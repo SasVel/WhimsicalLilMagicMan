@@ -1,7 +1,8 @@
-res://Shaders
-res://World/Rooms/DungeonRooms
+res://MagicBullet
 res://World/Rooms
+res://Shaders
 res://World/Tiles
+res://World/Rooms/DungeonRooms
 res://
 res://Enemies/Goblin/Assets
 res://Enemies/Goblin

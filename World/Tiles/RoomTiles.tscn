@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxx55nxd0bxfl"]
+[gd_scene load_steps=10 format=3 uid="uid://cxx55nxd0bxfl"]
 
 [ext_resource type="Texture2D" uid="uid://b60rv3kxe4vue" path="res://World/Tiles/dungeontileset-extended.png" id="1_5nnsi"]
 
@@ -7,6 +7,18 @@ tile_data = PackedInt32Array(0, 196608, 5, 65536, 65536, 6, 1, 65536, 5, 65537, 
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vdvrp"]
 tile_data = PackedInt32Array(0, 589824, 13, 65536, 589824, 14, 131072, 589824, 15, 1, 655360, 13, 65537, 655360, 14, 131073, 655360, 15)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_glxbh"]
+tile_data = PackedInt32Array(0, 196608, 18, 65536, 196608, 19, 1, 131072, 17, 65537, 131072, 19)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_du7fs"]
+tile_data = PackedInt32Array(0, 65536, 17, 65536, 65536, 19, 1, 196608, 18, 65537, 196608, 19)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_xm5dg"]
+tile_data = PackedInt32Array(0, 65536, 17, 65536, 65536, 18, 1, 131072, 17, 65537, 131072, 18)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_o6a72"]
+tile_data = PackedInt32Array(0, 65536, 18, 65536, 65536, 19, 1, 131072, 18, 65537, 131072, 19)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wxad"]
 texture = ExtResource("1_5nnsi")
@@ -942,9 +954,6 @@ texture = ExtResource("1_5nnsi")
 1:22/0 = 0
 1:22/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:22/0/physics_layer_0/angular_velocity = 0.0
-2:22/0 = 0
-2:22/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:22/0/physics_layer_0/angular_velocity = 0.0
 4:22/0 = 0
 4:22/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:22/0/physics_layer_0/angular_velocity = 0.0
@@ -1094,6 +1103,9 @@ texture = ExtResource("1_5nnsi")
 4:12/0/terrains_peering_bit/top_left_corner = 0
 4:12/0/terrains_peering_bit/top_side = 0
 4:12/0/terrains_peering_bit/top_right_corner = 0
+2:22/0 = 0
+2:22/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:22/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_d70ob"]
 physics_layer_0/collision_layer = 1
@@ -1106,6 +1118,10 @@ terrain_set_0/terrain_1/color = Color(0, 0.623529, 0.74902, 1)
 sources/0 = SubResource("TileSetAtlasSource_4wxad")
 pattern_0 = SubResource("TileMapPattern_7ehv0")
 pattern_1 = SubResource("TileMapPattern_vdvrp")
+pattern_2 = SubResource("TileMapPattern_glxbh")
+pattern_3 = SubResource("TileMapPattern_du7fs")
+pattern_4 = SubResource("TileMapPattern_xm5dg")
+pattern_5 = SubResource("TileMapPattern_o6a72")
 
 [node name="RoomTiles" type="TileMap"]
 y_sort_enabled = true

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvbbbxamr8lqo"]
+
+[ext_resource type="Script" path="res://MagicBullet/MagicBullet.gd" id="1_0w5fa"]
+[ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="2_4khlr"]
+[ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="3_m8j2d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_du8i2"]
+radius = 4.0
+
+[sub_resource type="Curve" id="Curve_80xyt"]
+_data = [Vector2(0, 0.890909), 0.0, -0.0738363, 0, 0, Vector2(1, 0.254545), -0.636364, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
+curve = SubResource("Curve_80xyt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_am5iw"]
+resource_local_to_scene = true
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(2, 2, 2)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 4.49
+linear_accel_max = 31.47
+angle_min = -90.0
+angle_max = 90.0
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_kjg5a")
+
+[node name="MagicBullet" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 5
+script = ExtResource("1_0w5fa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_du8i2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0, 1, 1, 0.635294)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_am5iw")
+
+[node name="HitBox" parent="." instance=ExtResource("2_4khlr")]
+
+[node name="HurtBox" parent="." instance=ExtResource("3_m8j2d")]
+collision_layer = 64
+collision_mask = 17
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

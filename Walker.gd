@@ -14,6 +14,7 @@ var maxStepsBeforeTurn = 2
 var maxSteps
 
 func _init(StartPos, Borders, MaxStepsBeforeTurn, MaxSteps):
+	startPos = StartPos
 	borders = Borders
 	maxStepsBeforeTurn = MaxStepsBeforeTurn
 	maxSteps = MaxSteps

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfh8j1xecu5o"]
+
+[ext_resource type="Texture2D" uid="uid://dsd3i037mh6o8" path="res://World/Tiles/SideDoor.png" id="1_bu8ft"]
+
+[node name="SideDoor" type="Sprite2D"]
+position = Vector2(85, 176)
+texture = ExtResource("1_bu8ft")

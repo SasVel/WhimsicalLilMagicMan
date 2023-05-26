@@ -294,6 +294,7 @@ transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_a
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 2
+collision_mask = 129
 script = ExtResource("1_mc25c")
 FRICTION = 20
 SPEED = 300

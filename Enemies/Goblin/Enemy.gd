@@ -54,7 +54,6 @@ func world_state_changed(val):
 
 func _on_hurt_box_area_entered(area):
 	var entity = area.get_parent()
-	print(entity.velocity)
 	self.apply_central_impulse(entity.velocity * 2)
 	stats.health -= area.damage
 

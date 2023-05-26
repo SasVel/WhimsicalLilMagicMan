@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=8 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Script" path="res://World/Main.gd" id="1_ou5ja"]
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cft5rctwc3rus" path="res://World/Rooms/StartRoom.tscn" id="3_gjgy4"]
 [ext_resource type="PackedScene" uid="uid://cr4pgto0p0mnw" path="res://UI/StatsUI/StatsUI.tscn" id="5_yhy40"]
 [ext_resource type="PackedScene" uid="uid://c3cfb6de0att1" path="res://Enemies/Goblin/EnemyGoblin.tscn" id="6_75cvx"]
+[ext_resource type="PackedScene" uid="uid://cqqp6cjqwid1w" path="res://World/Pickups/ManaPickup.tscn" id="7_b1n6y"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ou5ja")
@@ -30,3 +31,7 @@ position = Vector2(460, 253)
 
 [node name="EnemyGoblin2" parent="." instance=ExtResource("6_75cvx")]
 position = Vector2(463, 132)
+
+[node name="ManaPickup" parent="." instance=ExtResource("7_b1n6y")]
+position = Vector2(216, 143)
+collision_priority = 5.0

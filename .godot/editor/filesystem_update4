@@ -21,3 +21,6 @@ res://Player/Movement.gd
 res://Enemies/Goblin/Enemy.gd
 res://MagicBullet/MagicBullet.gd
 res://World/Rooms/StartRoom.tscn
+res://World/Pickups/ManaPickup.tscn
+res://World/Pickups/ManaPickup.gd
+res://GlobalInfo.tscn

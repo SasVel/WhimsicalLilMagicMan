@@ -89,6 +89,7 @@ shoot={
 2d_physics/layer_5="EnemyHurtbox"
 2d_physics/layer_6="EnemyDetection"
 2d_physics/layer_7="PlayerBulletHurtbox"
+2d_physics/layer_8="Pickup"
 
 [rendering]
 

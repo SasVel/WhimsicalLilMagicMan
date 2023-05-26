@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqqp6cjqwid1w"]
+
+[ext_resource type="PackedScene" uid="uid://kyuyb5042dv" path="res://Effects/ParticleEffect.tscn" id="1_gxujg"]
+[ext_resource type="Script" path="res://World/Pickups/ManaPickup.gd" id="1_hibpm"]
+
+[sub_resource type="Curve" id="Curve_80xyt"]
+_data = [Vector2(0, 0.890909), 0.0, -0.0738363, 0, 0, Vector2(1, 0.254545), -0.636364, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
+curve = SubResource("Curve_80xyt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l2vwo"]
+resource_local_to_scene = true
+lifetime_randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 6.75
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -90.0
+angle_max = 90.0
+scale_min = 4.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_kjg5a")
+color = Color(1, 1, 1, 0.643137)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ga37f"]
+radius = 8.0
+
+[node name="ManaPickup" type="Area2D"]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_hibpm")
+
+[node name="ParticleEffect" parent="." instance=ExtResource("1_gxujg")]
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_l2vwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ga37f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

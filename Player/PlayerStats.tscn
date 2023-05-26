@@ -1,5 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf5ournvwuj24"]
+[gd_scene load_steps=3 format=3 uid="uid://bf5ournvwuj24"]
 
 [ext_resource type="PackedScene" uid="uid://cm5wfph8jbxdj" path="res://Stats/Stats.tscn" id="1_w4q2y"]
+[ext_resource type="Script" path="res://Player/PlayerStats.gd" id="2_m6aku"]
 
 [node name="PlayerStats" instance=ExtResource("1_w4q2y")]
+script = ExtResource("2_m6aku")
+max_mana = 10
+mana_regen_per_tick = 1
+
+[node name="ManaTickTimer" type="Timer" parent="." index="0"]
+wait_time = 0.5
+
+[node name="ManaRegenTimer" type="Timer" parent="." index="1"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="ManaTickTimer" to="." method="_on_mana_tick_timer_timeout"]
+[connection signal="timeout" from="ManaRegenTimer" to="." method="_on_mana_regen_timer_timeout"]

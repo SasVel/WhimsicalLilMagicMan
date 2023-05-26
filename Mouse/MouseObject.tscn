@@ -34,6 +34,7 @@ layer = 9
 script = ExtResource("1_7uesv")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="MouseObj"]
+modulate = Color(0.368627, 1, 0.988235, 1)
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_66ifh")
 texture = ExtResource("2_u41fj")

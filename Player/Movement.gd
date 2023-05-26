@@ -76,8 +76,9 @@ func _physics_process(delta):
 	
 func shoot_bullet():
 	var bullet = Bullet.instantiate()
-	bullet.position = staff.gemPos
-	get_tree().get_root().add_child(bullet)
+	if PlayerStats.mana >= bullet.mana_cost:
+		bullet.position = staff.gemPos
+		get_tree().get_root().add_child(bullet)
 
 func _on_hurt_box_area_entered(area):
 	PlayerStats.health -= area.damage

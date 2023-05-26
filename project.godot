@@ -23,6 +23,10 @@ MouseObject="*res://Mouse/MouseObject.tscn"
 GlobalInfo="*res://GlobalInfo.tscn"
 PlayerStats="*res://Player/PlayerStats.tscn"
 
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
 [display]
 
 window/size/viewport_width=640
@@ -83,7 +87,7 @@ shoot={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="PlayerHurtbox"
 2d_physics/layer_5="EnemyHurtbox"
-2d_physics/layer_6="Staff"
+2d_physics/layer_6="EnemyDetection"
 2d_physics/layer_7="PlayerBulletHurtbox"
 
 [rendering]

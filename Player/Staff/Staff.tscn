@@ -64,7 +64,7 @@ texture = ExtResource("2_wkuc6")
 [node name="GemPivot" type="Node2D" parent="StaffSprite"]
 
 [node name="GemSprite" type="Sprite2D" parent="StaffSprite/GemPivot"]
-position = Vector2(0, -15.8576)
+position = Vector2(0, -9.5)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_31oct")
 

@@ -47,3 +47,6 @@ func world_state_changed(val):
 		sprites.material.set_shader_parameter("flash_color", Color.WHITE)
 	else:
 		sprites.material.set_shader_parameter("flash_opacity", 0)
+
+func _on_hurt_box_area_entered(area):
+	queue_free()

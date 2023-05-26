@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://jl61vuqhndiy"]
+[gd_scene load_steps=33 format=3 uid="uid://jl61vuqhndiy"]
 
 [ext_resource type="Script" path="res://Player/Movement.gd" id="1_mc25c"]
 [ext_resource type="SpriteFrames" uid="uid://bkw57ne00h0tj" path="res://Player/PlayerFrames.tres" id="2_oncrt"]
@@ -10,6 +10,14 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwx1s"]
 radius = 5.0
 height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b66ad"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2nrq"]
+radius = 8.0
+height = 24.0
 
 [sub_resource type="Animation" id="Animation_vxgaw"]
 resource_name = "IdleLeft"
@@ -315,9 +323,17 @@ shape = SubResource("CapsuleShape2D_fwx1s")
 collision_layer = 2
 collision_mask = 16
 
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_b66ad")
+
 [node name="HurtBox" parent="." instance=ExtResource("6_ovi2f")]
 collision_layer = 8
 collision_mask = 0
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_y2nrq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -331,3 +347,8 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_xskl6")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Run/blend_position = Vector2(0.348485, -0.331441)
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+
+[editable path="HitBox"]
+[editable path="HurtBox"]

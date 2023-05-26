@@ -27,6 +27,11 @@ func idle_state():
 	
 func run_state(delta):
 	self.position = self.position.move_toward(GlobalInfo.playerPos, SPEED * delta)
+	if GlobalInfo.playerPos.x > self.position.x:
+		sprites.flip_h = false
+	else:
+		sprites.flip_h = true
+	
 
 func _on_player_detection_zone_body_entered(body):
 	if body is Player:
@@ -39,6 +44,6 @@ func _on_player_detection_zone_body_exited(body):
 func world_state_changed(val):
 	if val == 1:
 		sprites.material.set_shader_parameter("flash_opacity", 0.7)
-		sprites.material.set_shader_parameter("flash_color", Color.DARK_RED)
+		sprites.material.set_shader_parameter("flash_color", Color.WHITE)
 	else:
 		sprites.material.set_shader_parameter("flash_opacity", 0)

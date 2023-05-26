@@ -19,6 +19,9 @@ var state = MOVE
 @onready var lastDirection = Vector2(1, 0)
 @onready var input_direction = Vector2.ZERO
 
+func _ready():
+	PlayerStats.no_health.connect(on_no_health)
+
 func idle_state(delta):
 	velocity = velocity.move_toward(Vector2.ZERO, (FRICTION * delta) * 20)
 	
@@ -74,4 +77,10 @@ func _physics_process(delta):
 func shoot_bullet():
 	var bullet = Bullet.instantiate()
 	bullet.position = staff.gemPos
-	staff.add_child(bullet)
+	get_tree().get_root().add_child(bullet)
+
+func _on_hurt_box_area_entered(area):
+	PlayerStats.health -= area.damage
+
+func on_no_health():
+	queue_free()

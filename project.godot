@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 GlobalShaders="*res://Shaders/GlobalShaders.tscn"
 MouseObject="*res://Mouse/MouseObject.tscn"
 GlobalInfo="*res://GlobalInfo.tscn"
+PlayerStats="*res://Player/PlayerStats.tscn"
 
 [display]
 

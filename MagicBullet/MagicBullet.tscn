@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvbbbxamr8lqo"]
+[gd_scene load_steps=10 format=3 uid="uid://dvbbbxamr8lqo"]
 
 [ext_resource type="Script" path="res://MagicBullet/MagicBullet.gd" id="1_0w5fa"]
 [ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="2_4khlr"]
@@ -31,9 +31,16 @@ scale_min = 2.0
 scale_max = 4.0
 scale_curve = SubResource("CurveTexture_kjg5a")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jk753"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubrv5"]
+radius = 4.0
+
 [node name="MagicBullet" type="CharacterBody2D"]
 collision_layer = 32
 collision_mask = 5
+motion_mode = 1
 script = ExtResource("1_0w5fa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -41,13 +48,28 @@ shape = SubResource("CircleShape2D_du8i2")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 modulate = Color(0, 1, 1, 0.635294)
-amount = 15
+amount = 20
 process_material = SubResource("ParticleProcessMaterial_am5iw")
+lifetime = 0.5
+speed_scale = 3.0
+explosiveness = 0.15
 
 [node name="HitBox" parent="." instance=ExtResource("2_4khlr")]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_jk753")
 
 [node name="HurtBox" parent="." instance=ExtResource("3_m8j2d")]
 collision_layer = 64
-collision_mask = 17
+collision_priority = 2.0
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+shape = SubResource("CircleShape2D_ubrv5")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+
+[editable path="HitBox"]
+[editable path="HurtBox"]

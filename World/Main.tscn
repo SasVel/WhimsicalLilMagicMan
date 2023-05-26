@@ -1,17 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=6 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Script" path="res://World/Main.gd" id="1_ou5ja"]
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
 [ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
-[ext_resource type="PackedScene" uid="uid://x4madpx2a5xc" path="res://UI/MainOverlay/MainOverlay.tscn" id="3_aiwwy"]
 [ext_resource type="PackedScene" uid="uid://cft5rctwc3rus" path="res://World/Rooms/StartRoom.tscn" id="3_gjgy4"]
-[ext_resource type="Shader" path="res://Shaders/RetroTvShader.gdshader" id="4_vhxy1"]
-[ext_resource type="PackedScene" uid="uid://5gmcfs2ysvs1" path="res://Enemies/Goblin/EnemyGoblin.tscn" id="6_75cvx"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a24o1"]
-shader = ExtResource("4_vhxy1")
-shader_parameter/scanline_count = 50.0
-shader_parameter/opacity = 0.5
+[ext_resource type="PackedScene" uid="uid://c3cfb6de0att1" path="res://Enemies/Goblin/EnemyGoblin.tscn" id="6_75cvx"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ou5ja")
@@ -21,9 +14,6 @@ environment = ExtResource("1_shwuh")
 
 [node name="StartRoom" parent="." instance=ExtResource("3_gjgy4")]
 
-[node name="EnemyGoblin" parent="." instance=ExtResource("6_75cvx")]
-position = Vector2(464, 192)
-
 [node name="Player" parent="." instance=ExtResource("2_hyuqm")]
 position = Vector2(336, 208)
 FRICTION = 30
@@ -31,6 +21,5 @@ MAX_SPEED = 1200
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="MainOverlay" parent="UI" instance=ExtResource("3_aiwwy")]
-material = SubResource("ShaderMaterial_a24o1")
-metadata/_edit_lock_ = true
+[node name="EnemyGoblin" parent="." instance=ExtResource("6_75cvx")]
+position = Vector2(464, 192)

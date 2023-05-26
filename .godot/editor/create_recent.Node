@@ -1,3 +1,6 @@
+StaticBody2D
+Node2D
+CanvasLayer
 CharacterBody2D
 CollisionShape2D
 Area2D
@@ -5,13 +8,10 @@ GPUParticles2D
 ColorRect
 Timer
 RigidBody2D
-Node2D
-CanvasLayer
 AnimationPlayer
 AnimatedSprite2D
 Sprite2D
 Camera2D
-StaticBody2D
 TileMap
 Label
 AnimationTree

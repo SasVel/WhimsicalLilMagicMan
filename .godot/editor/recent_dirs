@@ -1,3 +1,5 @@
+res://Player
+res://Stats
 res://MagicBullet
 res://World/Rooms
 res://Shaders
@@ -8,6 +10,5 @@ res://Enemies/Goblin/Assets
 res://Enemies/Goblin
 res://Player/Assets
 res://Fonts
-res://Player
 res://Player/Staff
 res://World

@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://5gmcfs2ysvs1"]
+[gd_scene load_steps=26 format=3 uid="uid://c3cfb6de0att1"]
 
-[ext_resource type="Script" path="res://Enemies/Goblin/EnemyGoblin.gd" id="1_ora1r"]
+[ext_resource type="Script" path="res://Enemies/Goblin/Enemy.gd" id="1_h6it2"]
 [ext_resource type="Texture2D" uid="uid://bi40feqdeyljc" path="res://Enemies/Goblin/Assets/goblin_idle_spritesheet.png" id="1_qjhuy"]
 [ext_resource type="Shader" path="res://Shaders/BlinkShader.gdshader" id="1_t3juo"]
 [ext_resource type="PackedScene" uid="uid://cm5wfph8jbxdj" path="res://Stats/Stats.tscn" id="2_j85s0"]
@@ -117,14 +117,19 @@ height = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x28b"]
 radius = 120.337
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxlgp"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imf5a"]
+radius = 7.0
+
 [node name="EnemyGoblin" type="RigidBody2D"]
 y_sort_enabled = true
 collision_layer = 4
-collision_mask = 35
 inertia = 1.0
 gravity_scale = 0.0
 lock_rotation = true
-script = ExtResource("1_ora1r")
+script = ExtResource("1_h6it2")
 
 [node name="Stats" parent="." instance=ExtResource("2_j85s0")]
 max_health = 2
@@ -155,9 +160,18 @@ shape = SubResource("CircleShape2D_6x28b")
 collision_layer = 4
 collision_mask = 8
 
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+shape = SubResource("CircleShape2D_yxlgp")
+
 [node name="HurtBox" parent="." instance=ExtResource("6_7wbxo")]
 collision_layer = 16
 collision_mask = 0
 
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+shape = SubResource("CircleShape2D_imf5a")
+
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_exited"]
+
+[editable path="HitBox"]
+[editable path="HurtBox"]

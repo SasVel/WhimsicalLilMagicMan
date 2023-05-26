@@ -13,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StaffSprite/GemSprite:position")
+tracks/0/path = NodePath("StaffSprite/GemPivot/GemSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +30,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("StaffSprite/GemSprite:position")
+tracks/0/path = NodePath("StaffSprite/GemPivot/GemSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,13 +46,10 @@ _data = {
 "Staff_gem_move": SubResource("Animation_ytmro")
 }
 
-[node name="Staff" type="RigidBody2D"]
+[node name="Staff" type="StaticBody2D"]
 y_sort_enabled = true
 collision_layer = 32
 collision_mask = 4
-mass = 20.0
-inertia = 2.0
-gravity_scale = 0.0
 script = ExtResource("1_ojjmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -60,12 +57,14 @@ position = Vector2(0, -43.5)
 shape = SubResource("RectangleShape2D_2ad8m")
 
 [node name="StaffSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -41.875)
+position = Vector2(0, -43.5)
 scale = Vector2(1.25, 1.25833)
 texture = ExtResource("2_wkuc6")
 
-[node name="GemSprite" type="Sprite2D" parent="StaffSprite"]
-position = Vector2(0, -9.5)
+[node name="GemPivot" type="Node2D" parent="StaffSprite"]
+
+[node name="GemSprite" type="Sprite2D" parent="StaffSprite/GemPivot"]
+position = Vector2(0, -15.8576)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_31oct")
 

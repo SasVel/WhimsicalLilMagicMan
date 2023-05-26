@@ -15,6 +15,5 @@ func _ready():
 func set_health(val):
 	emit_signal("changed_health", val)
 	health = clamp(val, 0, max_health + 1)
-	print(health)
 	if health <= 0:
 		emit_signal("no_health")

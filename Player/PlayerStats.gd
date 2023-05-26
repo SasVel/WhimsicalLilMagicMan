@@ -19,7 +19,7 @@ var canRegenerate = false : set = set_mana_regen_bool
 func _ready():
 	health = max_health
 	mana = max_mana
-
+	
 func set_health(val):
 	emit_signal("changed_health", val)
 	health = clamp(val, 0, max_health + 1)

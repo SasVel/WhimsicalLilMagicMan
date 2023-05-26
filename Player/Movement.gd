@@ -8,6 +8,7 @@ class_name Player
 var CURR_SPEED = SPEED;
 @onready var staff = $Staff
 @onready var Bullet = preload("res://MagicBullet/MagicBullet.tscn")
+
 enum {
 	IDLE,
 	MOVE
@@ -68,13 +69,13 @@ func _physics_process(delta):
 		else:
 			GlobalInfo.worldState = GlobalInfo.worldStateEnum.MAIN
 	
-	if Input.is_action_just_pressed("shoot"):
-		shoot_bullet()
+	if Input.is_action_just_pressed("shoot") && GlobalInfo.worldState == GlobalInfo.worldStateEnum.MAIN:
+		shoot()
 	
 	GlobalInfo.playerPos = self.position
 	move_and_slide()
 	
-func shoot_bullet():
+func shoot():
 	var bullet = Bullet.instantiate()
 	if PlayerStats.mana >= bullet.mana_cost:
 		bullet.position = staff.gemPos
@@ -82,6 +83,8 @@ func shoot_bullet():
 
 func _on_hurt_box_area_entered(area):
 	PlayerStats.health -= area.damage
+	var enemy = area.get_parent()
+	enemy.apply_central_impulse(Vector2())
 
 func on_no_health():
 	queue_free()

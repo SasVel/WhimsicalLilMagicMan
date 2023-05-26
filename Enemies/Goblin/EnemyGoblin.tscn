@@ -115,7 +115,7 @@ radius = 7.0
 height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x28b"]
-radius = 120.337
+radius = 180.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yxlgp"]
 radius = 7.0
@@ -127,13 +127,13 @@ radius = 7.0
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 5
-inertia = 1.0
+mass = 5.0
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_h6it2")
 
 [node name="Stats" parent="." instance=ExtResource("2_j85s0")]
-max_health = 2
+max_health = 5
 
 [node name="MainSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_uhtbg")
@@ -150,7 +150,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_aacr7")
 
 [node name="PlayerDetectionZone" type="Area2D" parent="."]
-visible = false
 collision_layer = 32
 collision_mask = 2
 
@@ -171,6 +170,7 @@ collision_mask = 2
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 shape = SubResource("CircleShape2D_imf5a")
 
+[connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]
 [connection signal="body_exited" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_exited"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -1,0 +1,119 @@
+[gd_scene load_steps=19 format=3 uid="uid://cr4pgto0p0mnw"]
+
+[ext_resource type="Script" path="res://UI/StatsUI/StatsUI.gd" id="1_sbfs8"]
+[ext_resource type="Texture2D" uid="uid://c1otdfwmwb15x" path="res://UI/StatsUI/Assets/HealthBarEmpty.png" id="2_op07q"]
+[ext_resource type="Texture2D" uid="uid://h3xqmwj7e8e1" path="res://UI/StatsUI/Assets/HealthBarOver.png" id="3_ljou1"]
+[ext_resource type="Texture2D" uid="uid://djhor1vau7ixi" path="res://UI/StatsUI/Assets/HealthBarFill.png" id="4_u8css"]
+[ext_resource type="Texture2D" uid="uid://c20ldd05hxgty" path="res://UI/StatsUI/Assets/ManaBarEmpty.png" id="5_1l3i6"]
+[ext_resource type="Texture2D" uid="uid://djwa3e7p0y35q" path="res://UI/StatsUI/Assets/ManaBarOver.png" id="6_n0vlh"]
+[ext_resource type="Texture2D" uid="uid://csdchxmvv0s6l" path="res://UI/StatsUI/Assets/ManaBarFill.png" id="7_as0sf"]
+[ext_resource type="Texture2D" uid="uid://cnqyv3sgdk7ve" path="res://UI/StatsUI/Assets/ManaRegenBarEmpty.png" id="8_88sxy"]
+[ext_resource type="PackedScene" uid="uid://cic11yujycixo" path="res://Effects/CustomEffects/HealthUI/HealthParticleEffect.tscn" id="8_gpg2l"]
+[ext_resource type="PackedScene" uid="uid://tyj76s5s5kli" path="res://Effects/CustomEffects/HealthUI/ManaParticleEffect.tscn" id="9_4g4pe"]
+[ext_resource type="Texture2D" uid="uid://b8aellh44wfn7" path="res://UI/StatsUI/Assets/ManaRegenBarOver.png" id="9_4u77r"]
+[ext_resource type="Texture2D" uid="uid://c1iy0p2molnhx" path="res://UI/StatsUI/Assets/ManaRegenBarFill.png" id="10_vaf0t"]
+
+[sub_resource type="Curve" id="Curve_xg52y"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e8323"]
+curve = SubResource("Curve_xg52y")
+
+[sub_resource type="Curve" id="Curve_80xyt"]
+_data = [Vector2(0, 0.890909), 0.0, -0.0738363, 0, 0, Vector2(1, 0.254545), -0.636364, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
+curve = SubResource("Curve_80xyt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jc37f"]
+resource_local_to_scene = true
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(70, 6, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -90.0
+angle_max = 90.0
+scale_min = 4.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_kjg5a")
+color = Color(0.937255, 0.141176, 0.172549, 1)
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("CurveTexture_e8323")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sopuq"]
+resource_local_to_scene = true
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(64, 12, 2)
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -90.0
+angle_max = 90.0
+scale_min = 4.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_kjg5a")
+color = Color(0, 0.811765, 0.901961, 0.690196)
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+
+[node name="StatsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sbfs8")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 176.0
+offset_bottom = 32.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_op07q")
+texture_over = ExtResource("3_ljou1")
+texture_progress = ExtResource("4_u8css")
+
+[node name="ManaBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 148.0
+offset_bottom = 54.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_1l3i6")
+texture_over = ExtResource("6_n0vlh")
+texture_progress = ExtResource("7_as0sf")
+
+[node name="CooldownBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 34.0
+offset_right = 174.0
+offset_bottom = 58.0
+value = 50.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("8_88sxy")
+texture_over = ExtResource("9_4u77r")
+texture_progress = ExtResource("10_vaf0t")
+
+[node name="HealthParticleEffect" parent="." instance=ExtResource("8_gpg2l")]
+position = Vector2(96, 20)
+process_material = SubResource("ParticleProcessMaterial_jc37f")
+
+[node name="ManaParticleEffect" parent="." instance=ExtResource("9_4g4pe")]
+position = Vector2(88, 42)
+process_material = SubResource("ParticleProcessMaterial_sopuq")

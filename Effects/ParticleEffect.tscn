@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://kyuyb5042dv"]
+
+[sub_resource type="Curve" id="Curve_80xyt"]
+_data = [Vector2(0, 0.890909), 0.0, -0.0738363, 0, 0, Vector2(1, 0.254545), -0.636364, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
+curve = SubResource("Curve_80xyt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bycld"]
+resource_local_to_scene = true
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(2, 2, 2)
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -90.0
+angle_max = 90.0
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_kjg5a")
+
+[node name="ParticleEffect" type="GPUParticles2D"]
+process_material = SubResource("ParticleProcessMaterial_bycld")

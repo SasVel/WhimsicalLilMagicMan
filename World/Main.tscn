@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=7 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Script" path="res://World/Main.gd" id="1_ou5ja"]
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
 [ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
 [ext_resource type="PackedScene" uid="uid://cft5rctwc3rus" path="res://World/Rooms/StartRoom.tscn" id="3_gjgy4"]
+[ext_resource type="PackedScene" uid="uid://cr4pgto0p0mnw" path="res://UI/StatsUI/StatsUI.tscn" id="5_yhy40"]
 [ext_resource type="PackedScene" uid="uid://c3cfb6de0att1" path="res://Enemies/Goblin/EnemyGoblin.tscn" id="6_75cvx"]
 
 [node name="Main" type="Node2D"]
@@ -20,6 +21,12 @@ FRICTION = 30
 MAX_SPEED = 1200
 
 [node name="UI" type="CanvasLayer" parent="."]
+layer = 9
+
+[node name="StatsUI" parent="UI" instance=ExtResource("5_yhy40")]
 
 [node name="EnemyGoblin" parent="." instance=ExtResource("6_75cvx")]
-position = Vector2(464, 192)
+position = Vector2(460, 253)
+
+[node name="EnemyGoblin2" parent="." instance=ExtResource("6_75cvx")]
+position = Vector2(463, 132)

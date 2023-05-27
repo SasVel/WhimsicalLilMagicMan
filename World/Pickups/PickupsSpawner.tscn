@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://5g1ftmb6gpuc"]
+
+[ext_resource type="Script" path="res://World/Pickups/PickupsSpawner.gd" id="1_bgs5c"]
+
+[node name="PickupsSpawner" type="Node2D"]
+script = ExtResource("1_bgs5c")
+
+[node name="PickupsTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="SpawnArea" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+
+[connection signal="timeout" from="PickupsTimer" to="." method="_on_pickups_timer_timeout"]

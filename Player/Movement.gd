@@ -84,7 +84,7 @@ func shoot():
 func _on_hurt_box_area_entered(area):
 	PlayerStats.health -= area.damage
 	var enemy = area.get_parent()
-	enemy.apply_central_impulse(Vector2())
+	enemy.apply_central_impulse(Vector2(enemy.directionToPlayer * -1 * 800))
 
 func on_no_health():
 	queue_free()

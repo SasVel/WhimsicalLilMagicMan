@@ -1,4 +1,5 @@
 extends Area2D
+class_name ManaPickup
 
 @export var mana_on_pickup = 30
 
@@ -15,6 +16,6 @@ func pickup_activation(val):
 		self.monitoring = false
 		self.visible = false
 
-func _on_area_entered(area):
+func _on_body_entered(body):
 	PlayerStats.mana += mana_on_pickup
 	queue_free()

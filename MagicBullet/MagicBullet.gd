@@ -13,5 +13,5 @@ func _physics_process(delta):
 	move_and_slide()
 	
 
-func _on_hurt_box_area_entered(area):
+func _on_hurt_box_body_entered(body):
 	queue_free()

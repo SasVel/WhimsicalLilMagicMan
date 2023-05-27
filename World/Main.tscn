@@ -15,6 +15,7 @@ script = ExtResource("1_ou5ja")
 environment = ExtResource("1_shwuh")
 
 [node name="StartRoom" parent="." instance=ExtResource("3_gjgy4")]
+script = null
 
 [node name="Player" parent="." instance=ExtResource("2_hyuqm")]
 position = Vector2(336, 208)
@@ -34,4 +35,3 @@ position = Vector2(463, 132)
 
 [node name="ManaPickup" parent="." instance=ExtResource("7_b1n6y")]
 position = Vector2(216, 143)
-collision_priority = 5.0

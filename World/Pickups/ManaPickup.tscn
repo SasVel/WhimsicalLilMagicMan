@@ -10,7 +10,7 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
 curve = SubResource("Curve_80xyt")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l2vwo"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qsvnr"]
 resource_local_to_scene = true
 lifetime_randomness = 0.2
 emission_shape = 1
@@ -32,14 +32,14 @@ radius = 8.0
 
 [node name="ManaPickup" type="Area2D"]
 collision_layer = 128
-collision_mask = 2
+collision_mask = 258
 script = ExtResource("1_hibpm")
 
 [node name="ParticleEffect" parent="." instance=ExtResource("1_gxujg")]
 amount = 15
-process_material = SubResource("ParticleProcessMaterial_l2vwo")
+process_material = SubResource("ParticleProcessMaterial_qsvnr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ga37f")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

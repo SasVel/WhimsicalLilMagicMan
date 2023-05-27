@@ -1,10 +1,10 @@
+CanvasLayer
+Timer
 CollisionShape2D
 Area2D
 TextureProgressBar
 ProgressBar
 GPUParticles2D
-CanvasLayer
-Timer
 StaticBody2D
 Node2D
 CharacterBody2D

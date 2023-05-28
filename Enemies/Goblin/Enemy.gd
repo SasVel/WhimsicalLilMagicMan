@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var SPEED = 100
 @export var MAX_SPEED = 300
 var directionToPlayer = Vector2.ZERO
+@onready var navAgent = $NavigationAgent2D
 @onready var stats = $Stats
 @onready var hitSound = $HitSoundPlayer
 
@@ -24,15 +25,18 @@ func _physics_process(delta):
 		RUN:
 			sprites.animation = "Run"
 			run_state(delta)
-	directionToPlayer = self.position.direction_to(GlobalInfo.playerPos)
+	navAgent.target_position = GlobalInfo.playerPos
+	directionToPlayer = self.position.direction_to(navAgent.get_next_path_position())
+	navAgent.set_velocity(self.linear_velocity)
 
 func idle_state(delta):
 	if self.linear_velocity != Vector2.ZERO:
-		self.linear_velocity = self.linear_velocity.move_toward(Vector2.ZERO, SPEED * delta)
+		self.linear_velocity = self.linear_velocity.move_toward(Vector2.ZERO, SPEED * delta * randi_range(1,3))
 	
 func run_state(delta):
 	if self.linear_velocity.x < MAX_SPEED || self.linear_velocity.y < MAX_SPEED:
-		self.apply_central_impulse(directionToPlayer * SPEED * delta * 2)
+		self.apply_central_impulse(directionToPlayer * SPEED * delta * randi_range(1,4))
+		
 	if GlobalInfo.playerPos.x > self.position.x:
 		sprites.flip_h = false
 	else:

@@ -32,7 +32,10 @@ func change_room(doorVector):
 	
 func load_next_room():
 	pastRooms.append(activeRoom)
-	activeRoom = rooms.pop_at(randi_range(0, rooms.size() - 1)).instantiate()
+	if rooms.size() > 0:
+		activeRoom = rooms.pop_at(randi_range(0, rooms.size() - 1)).instantiate()
+	else:
+		activeRoom = load("res://World/Rooms/FinalRoom.tscn").instantiate()
 
 func set_player_position(doorVector):
 	var door

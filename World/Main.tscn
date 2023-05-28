@@ -1,17 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=11 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Script" path="res://World/Main.gd" id="1_ou5ja"]
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
 [ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
 [ext_resource type="PackedScene" uid="uid://cft5rctwc3rus" path="res://World/Rooms/StartRoom.tscn" id="3_gjgy4"]
 [ext_resource type="PackedScene" uid="uid://cr4pgto0p0mnw" path="res://UI/StatsUI/StatsUI.tscn" id="5_yhy40"]
+[ext_resource type="PackedScene" uid="uid://cb6gmjn2sr368" path="res://UI/PauseUI/PauseUI.tscn" id="6_84hs3"]
 [ext_resource type="PackedScene" uid="uid://cqqp6cjqwid1w" path="res://World/Pickups/ManaPickup.tscn" id="7_b1n6y"]
+[ext_resource type="PackedScene" uid="uid://2ojvvwqeftmm" path="res://UI/GameOverUI/GameOverUI.tscn" id="7_wcexn"]
+[ext_resource type="PackedScene" uid="uid://duwstrcc1okos" path="res://UI/GameCompleteUI/GameCompleteUI.tscn" id="8_8jmpy"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lgxgr"]
+vertices = PackedVector2Array(660, 23, 658, 390, 13, 394, 12, 24)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(660, 23, 658, 390, 13, 394, 12, 24)])
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ou5ja")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_shwuh")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_lgxgr")
 
 [node name="ActiveRoom" type="Node2D" parent="."]
 
@@ -27,6 +38,12 @@ MAX_SPEED = 1200
 layer = 9
 
 [node name="StatsUI" parent="UI" instance=ExtResource("5_yhy40")]
+
+[node name="PauseUI" parent="UI" instance=ExtResource("6_84hs3")]
+
+[node name="GameOverUI" parent="UI" instance=ExtResource("7_wcexn")]
+
+[node name="GameCompleteUI" parent="UI" instance=ExtResource("8_8jmpy")]
 
 [node name="ManaPickup" parent="." instance=ExtResource("7_b1n6y")]
 position = Vector2(216, 143)

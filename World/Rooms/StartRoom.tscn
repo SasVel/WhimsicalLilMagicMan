@@ -19,9 +19,23 @@ layer_2/tile_data = PackedInt32Array(1245218, 196608, 14, 1179682, 0, 13, 111414
 position = Vector2(-8, 32)
 shape = SubResource("RectangleShape2D_b3j0r")
 
+[node name="DoorObjUp" parent="." index="3"]
+position = Vector2(336, 105)
+
 [node name="CollisionShape2D" parent="DoorObjUp" index="0"]
-position = Vector2(335.5, 103.5)
 shape = SubResource("RectangleShape2D_7irc5")
+
+[node name="CollisionShape2D" parent="DoorObjDown" index="0"]
+disabled = true
+
+[node name="CollisionShape2D" parent="DoorObjLeft" index="0"]
+disabled = true
+
+[node name="CollisionShape2D" parent="DoorObjRight" index="0"]
+disabled = true
 
 [editable path="PickupsSpawner"]
 [editable path="DoorObjUp"]
+[editable path="DoorObjDown"]
+[editable path="DoorObjLeft"]
+[editable path="DoorObjRight"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://btlrt8uwoehmc"]
+
+[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_5bkuv"]
+[ext_resource type="Script" path="res://UI/MainMenuUI/MainMenuUI.gd" id="1_ijfmx"]
+[ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="2_0w5yf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l75au"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="MainMenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijfmx")
+
+[node name="BackgroundForUI" parent="." instance=ExtResource("1_5bkuv")]
+layout_mode = 1
+offset_left = -88.0
+offset_top = -116.0
+offset_right = 88.0
+offset_bottom = 76.0
+
+[node name="Label" type="Label" parent="BackgroundForUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 16.0
+offset_right = 20.0
+offset_bottom = 29.0
+grow_horizontal = 2
+text = "Wimsicle Lil Magic Man!"
+label_settings = SubResource("LabelSettings_l75au")
+
+[node name="PlayBtn" parent="." instance=ExtResource("2_0w5yf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -60.0
+offset_right = 32.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnLabel" parent="PlayBtn" index="0"]
+text = "Play"
+
+[node name="SettingsBtn" parent="." instance=ExtResource("2_0w5yf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnLabel" parent="SettingsBtn" index="0"]
+text = "Credits"
+
+[node name="CreditsBtn" parent="." instance=ExtResource("2_0w5yf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 20.0
+offset_right = 32.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnLabel" parent="CreditsBtn" index="0"]
+text = "Settings"
+
+[connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="CreditsBtn" to="." method="_on_credits_btn_pressed"]
+
+[editable path="PlayBtn"]
+[editable path="SettingsBtn"]
+[editable path="CreditsBtn"]

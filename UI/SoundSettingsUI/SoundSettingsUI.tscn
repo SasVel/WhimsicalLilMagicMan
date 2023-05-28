@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy34wfvkpw7eb"]
+
+[ext_resource type="Script" path="res://UI/SoundSettingsUI/SoundSettingsUI.gd" id="1_l0dbi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w6q71"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_58lf7"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wqjk1"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="SoundSettingsUI" type="Control"]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 214.0
+offset_bottom = 160.0
+script = ExtResource("1_l0dbi")
+
+[node name="MasterSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -38.0
+offset_right = 97.5
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MasterSlider"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = -4.0
+offset_right = -36.0
+offset_bottom = 16.0
+text = "Master"
+label_settings = SubResource("LabelSettings_w6q71")
+
+[node name="MusicSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -8.0
+offset_right = 97.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MusicSlider"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = -4.0
+offset_right = -36.0
+offset_bottom = 16.0
+text = "Music"
+label_settings = SubResource("LabelSettings_58lf7")
+
+[node name="SFXSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = 25.0
+offset_right = 97.5
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SFXSlider"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -4.0
+offset_right = -10.0
+offset_bottom = 16.0
+text = "Sound Effects"
+label_settings = SubResource("LabelSettings_wqjk1")
+
+[connection signal="value_changed" from="MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]

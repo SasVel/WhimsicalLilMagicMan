@@ -9,16 +9,16 @@
 size = Vector2(448, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2670a"]
-size = Vector2(32, 16)
+size = Vector2(32, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnu6u"]
-size = Vector2(32, 18)
+size = Vector2(32, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfm6x"]
-size = Vector2(20, 32)
+size = Vector2(26, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8ad4"]
-size = Vector2(20, 32)
+size = Vector2(26, 32)
 
 [node name="Room1" instance=ExtResource("1_qrwte")]
 
@@ -54,22 +54,28 @@ position = Vector2(448, 264)
 position = Vector2(296, 216)
 
 [node name="CollisionShape2D" parent="DoorObjUp" index="0"]
-position = Vector2(336, 120)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_2670a")
 
 [node name="DoorObjDown" parent="." index="6"]
 position = Vector2(336, 296)
 
 [node name="CollisionShape2D" parent="DoorObjDown" index="0"]
-position = Vector2(0, 1)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_nnu6u")
 
-[node name="CollisionShape2D" parent="DoorObjLeft" index="0"]
+[node name="DoorObjLeft" parent="." index="7"]
 position = Vector2(96, 176)
+
+[node name="CollisionShape2D" parent="DoorObjLeft" index="0"]
+position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_xfm6x")
 
-[node name="CollisionShape2D" parent="DoorObjRight" index="0"]
+[node name="DoorObjRight" parent="." index="8"]
 position = Vector2(544, 176)
+
+[node name="CollisionShape2D" parent="DoorObjRight" index="0"]
+position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_l8ad4")
 
 [editable path="PickupsSpawner"]

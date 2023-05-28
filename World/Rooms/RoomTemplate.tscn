@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr45a0txntyhl"]
+[gd_scene load_steps=9 format=3 uid="uid://cr45a0txntyhl"]
 
 [ext_resource type="Script" path="res://World/Rooms/RoomTemplate.gd" id="1_n05fl"]
 [ext_resource type="PackedScene" uid="uid://cxx55nxd0bxfl" path="res://World/Tiles/RoomTiles.tscn" id="1_xhcmm"]
 [ext_resource type="PackedScene" uid="uid://5g1ftmb6gpuc" path="res://World/Pickups/PickupsSpawner.tscn" id="3_7144p"]
 [ext_resource type="PackedScene" uid="uid://dnat1cae772k6" path="res://World/Rooms/DoorObjects/DoorObj.tscn" id="5_tprvl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_taxe6"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dhw5"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cbxc"]
+size = Vector2(26, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p71kf"]
+size = Vector2(20, 32)
 
 [node name="RoomTemplate" type="Node2D"]
 script = ExtResource("1_n05fl")
@@ -18,14 +30,34 @@ position = Vector2(336, 176)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="DoorObjUp" parent="." instance=ExtResource("5_tprvl")]
+position = Vector2(336, 128)
+
+[node name="CollisionShape2D" parent="DoorObjUp" index="0"]
+shape = SubResource("RectangleShape2D_taxe6")
 
 [node name="DoorObjDown" parent="." instance=ExtResource("5_tprvl")]
+position = Vector2(336, 224)
 direction = 1
 
+[node name="CollisionShape2D" parent="DoorObjDown" index="0"]
+shape = SubResource("RectangleShape2D_1dhw5")
+
 [node name="DoorObjLeft" parent="." instance=ExtResource("5_tprvl")]
+position = Vector2(288, 176)
 direction = 2
 
+[node name="CollisionShape2D" parent="DoorObjLeft" index="0"]
+shape = SubResource("RectangleShape2D_5cbxc")
+
 [node name="DoorObjRight" parent="." instance=ExtResource("5_tprvl")]
+position = Vector2(384, 176)
 direction = 3
 
+[node name="CollisionShape2D" parent="DoorObjRight" index="0"]
+shape = SubResource("RectangleShape2D_p71kf")
+
 [editable path="PickupsSpawner"]
+[editable path="DoorObjUp"]
+[editable path="DoorObjDown"]
+[editable path="DoorObjLeft"]
+[editable path="DoorObjRight"]

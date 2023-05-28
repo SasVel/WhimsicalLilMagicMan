@@ -28,7 +28,8 @@ scale_max = 4.0
 scale_curve = SubResource("CurveTexture_kjg5a")
 
 [node name="MouseObject" type="CanvasLayer"]
-layer = 9
+process_mode = 3
+layer = 100
 
 [node name="MouseObj" type="Node2D" parent="."]
 script = ExtResource("1_7uesv")

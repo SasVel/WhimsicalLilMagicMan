@@ -18,3 +18,4 @@ visible = false
 y_sort_enabled = true
 
 [node name="VignetteShader" parent="." instance=ExtResource("2_kntc3")]
+mouse_filter = 2

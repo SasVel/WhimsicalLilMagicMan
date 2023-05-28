@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb6gmjn2sr368"]
+
+[ext_resource type="Script" path="res://UI/PauseUI/PauseUI.gd" id="1_14u5e"]
+[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="2_ccfv4"]
+[ext_resource type="PackedScene" uid="uid://cy34wfvkpw7eb" path="res://UI/SoundSettingsUI/SoundSettingsUI.tscn" id="3_8bujo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8uvj6"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="PauseUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14u5e")
+
+[node name="BackgroundForUI" parent="." instance=ExtResource("2_ccfv4")]
+layout_mode = 1
+offset_left = -144.0
+offset_top = -92.0
+offset_right = 128.0
+offset_bottom = 148.0
+
+[node name="PauseText" type="Label" parent="BackgroundForUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -106.0
+offset_right = 147.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Wimsicle Lil Magic Man
+ is taking a nap.
+press ESC to wake up."
+label_settings = SubResource("LabelSettings_8uvj6")
+horizontal_alignment = 1
+
+[node name="SoundSettingsUI" parent="." instance=ExtResource("3_8bujo")]
+offset_left = 200.0
+offset_top = 168.0
+offset_right = 414.0
+offset_bottom = 328.0

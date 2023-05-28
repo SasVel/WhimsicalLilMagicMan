@@ -1,17 +1,18 @@
-extends ColorRect
+extends CanvasLayer
 
 var clearFog = true
+@onready var fogRect = $RoomFogRect
 
 func _process(delta):
 	if clearFog:
-		if self.color.a > 0:
+		if fogRect.color.a > 0:
 			clear_fog()
 	else:
-		if self.color.a < 1:
+		if fogRect.color.a < 1.0:
 			bring_fog()
 
 func clear_fog():
-	self.color.a -= 0.05
+	fogRect.color.a -= 0.05
 	
 func bring_fog():
-	self.color.a += 0.05
+	fogRect.color.a += 0.05

@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=7 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Script" path="res://World/Main.gd" id="1_ou5ja"]
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
 [ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
 [ext_resource type="PackedScene" uid="uid://cft5rctwc3rus" path="res://World/Rooms/StartRoom.tscn" id="3_gjgy4"]
 [ext_resource type="PackedScene" uid="uid://cr4pgto0p0mnw" path="res://UI/StatsUI/StatsUI.tscn" id="5_yhy40"]
-[ext_resource type="PackedScene" uid="uid://c3cfb6de0att1" path="res://Enemies/Goblin/EnemyGoblin.tscn" id="6_75cvx"]
 [ext_resource type="PackedScene" uid="uid://cqqp6cjqwid1w" path="res://World/Pickups/ManaPickup.tscn" id="7_b1n6y"]
 
 [node name="Main" type="Node2D"]
@@ -14,7 +13,9 @@ script = ExtResource("1_ou5ja")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_shwuh")
 
-[node name="StartRoom" parent="." instance=ExtResource("3_gjgy4")]
+[node name="ActiveRoom" type="Node2D" parent="."]
+
+[node name="StartRoom" parent="ActiveRoom" instance=ExtResource("3_gjgy4")]
 script = null
 
 [node name="Player" parent="." instance=ExtResource("2_hyuqm")]
@@ -26,12 +27,6 @@ MAX_SPEED = 1200
 layer = 9
 
 [node name="StatsUI" parent="UI" instance=ExtResource("5_yhy40")]
-
-[node name="EnemyGoblin" parent="." instance=ExtResource("6_75cvx")]
-position = Vector2(460, 253)
-
-[node name="EnemyGoblin2" parent="." instance=ExtResource("6_75cvx")]
-position = Vector2(463, 132)
 
 [node name="ManaPickup" parent="." instance=ExtResource("7_b1n6y")]
 position = Vector2(216, 143)

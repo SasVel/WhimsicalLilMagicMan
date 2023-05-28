@@ -8,6 +8,7 @@ class_name Player
 var CURR_SPEED = SPEED;
 @onready var staff = $Staff
 @onready var Bullet = preload("res://MagicBullet/MagicBullet.tscn")
+@onready var whooshPlayer = $WhooshPlayer
 
 enum {
 	IDLE,
@@ -30,7 +31,6 @@ func idle_state(delta):
 		state = MOVE
 
 func move_state(delta):
-	
 	#Blend positions
 	animationTree.set("parameters/Idle/blend_position", lastDirection)
 	animationTree.set("parameters/Run/blend_position", input_direction)
@@ -80,6 +80,8 @@ func shoot():
 	if PlayerStats.mana >= bullet.mana_cost:
 		bullet.position = staff.gemPos
 		get_tree().get_root().add_child(bullet)
+		whooshPlayer.play()
+		
 
 func _on_hurt_box_area_entered(area):
 	PlayerStats.health -= area.damage

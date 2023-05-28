@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c3cfb6de0att1"]
+[gd_scene load_steps=31 format=3 uid="uid://c3cfb6de0att1"]
 
 [ext_resource type="Script" path="res://Enemies/Goblin/Enemy.gd" id="1_h6it2"]
 [ext_resource type="Texture2D" uid="uid://bi40feqdeyljc" path="res://Enemies/Goblin/Assets/goblin_idle_spritesheet.png" id="1_qjhuy"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bllflj4k84vmn" path="res://Enemies/Goblin/Assets/goblin_run_spritesheet.png" id="2_teonk"]
 [ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="5_eyrfi"]
 [ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="6_7wbxo"]
+[ext_resource type="AudioStream" uid="uid://bfurnu152f1fp" path="res://Enemies/Goblin/Sounds/GoblinHitSounds1.ogg" id="8_hfrri"]
+[ext_resource type="AudioStream" uid="uid://c7obdc3lj3nfm" path="res://Enemies/Goblin/Sounds/GoblinHitSounds2.ogg" id="9_78inn"]
+[ext_resource type="AudioStream" uid="uid://qawxndyk1fdc" path="res://Enemies/Goblin/Sounds/GoblinHitSounds3.ogg" id="10_wwaqo"]
+[ext_resource type="AudioStream" uid="uid://c3llc2n3jql2p" path="res://Enemies/Goblin/Sounds/GoblinHitSounds4.ogg" id="11_a1amp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uhtbg"]
 shader = ExtResource("1_t3juo")
@@ -115,7 +119,7 @@ radius = 7.0
 height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6x28b"]
-radius = 180.1
+radius = 268.119
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yxlgp"]
 radius = 7.0
@@ -123,17 +127,28 @@ radius = 7.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_imf5a"]
 radius = 7.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f28l4"]
+streams_count = 4
+stream_0/stream = ExtResource("8_hfrri")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("9_78inn")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("10_wwaqo")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("11_a1amp")
+stream_3/weight = 1.0
+
 [node name="EnemyGoblin" type="RigidBody2D"]
 y_sort_enabled = true
 collision_layer = 4
-collision_mask = 5
+collision_mask = 517
 mass = 5.0
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_h6it2")
 
 [node name="Stats" parent="." instance=ExtResource("2_j85s0")]
-max_health = 5
+max_health = 2
 
 [node name="MainSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_uhtbg")
@@ -169,6 +184,11 @@ collision_mask = 2
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 shape = SubResource("CircleShape2D_imf5a")
+
+[node name="HitSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_f28l4")
+max_distance = 500.0
+bus = &"SFX"
 
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]

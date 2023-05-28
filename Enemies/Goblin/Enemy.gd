@@ -5,6 +5,7 @@ extends RigidBody2D
 @export var MAX_SPEED = 300
 var directionToPlayer = Vector2.ZERO
 @onready var stats = $Stats
+@onready var hitSound = $HitSoundPlayer
 
 enum {
 	IDLE,
@@ -56,6 +57,7 @@ func _on_hurt_box_area_entered(area):
 	var entity = area.get_parent()
 	self.apply_central_impulse(entity.velocity * 2)
 	stats.health -= area.damage
+	hitSound.play()
 
 func _on_stats_no_health():
 	queue_free()

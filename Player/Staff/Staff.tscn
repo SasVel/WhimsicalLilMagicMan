@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="4_nubqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ad8m"]
-size = Vector2(8, 41)
+size = Vector2(4.92186, 31.0701)
 
 [sub_resource type="Animation" id="Animation_umquh"]
 length = 0.001
@@ -53,12 +53,12 @@ collision_mask = 4
 script = ExtResource("1_ojjmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -43.5)
+position = Vector2(-0.121658, -38.5744)
 shape = SubResource("RectangleShape2D_2ad8m")
 
 [node name="StaffSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -43.5)
-scale = Vector2(1.25, 1.25833)
+position = Vector2(0, -40.5)
+scale = Vector2(1.18002, 1.18788)
 texture = ExtResource("2_wkuc6")
 
 [node name="GemPivot" type="Node2D" parent="StaffSprite"]

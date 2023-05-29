@@ -14,3 +14,5 @@ res://UI/SoundSettingsUI/SoundSettingsUI.tscn
 res://Player/PlayerStats.tscn
 res://Player/Player.tscn
 res://Player/Staff/Staff.tscn
+res://Music/MusicPlayer.tscn
+res://Enemies/Goblin/EnemyGoblin.tscn

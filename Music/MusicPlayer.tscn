@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1d1ray213ifh"]
+
+[ext_resource type="AudioStream" uid="uid://btnudm01cfmjh" path="res://Music/MainTheme.wav" id="1_h0vi5"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_h0vi5")
+volume_db = -20.392
+autoplay = true
+bus = &"Music"

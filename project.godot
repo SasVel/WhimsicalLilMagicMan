@@ -24,6 +24,7 @@ GlobalInfo="*res://GlobalInfo.tscn"
 PlayerStats="*res://Player/PlayerStats.tscn"
 EnemyTracker="*res://World/Rooms/EnemyTracker.tscn"
 RoomFog="*res://World/Rooms/RoomFog.tscn"
+MusicPlayer="*res://Music/MusicPlayer.tscn"
 
 [debug]
 

@@ -195,6 +195,7 @@ shape = SubResource("CircleShape2D_imf5a")
 
 [node name="HitSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_f28l4")
+volume_db = -12.0
 max_distance = 500.0
 bus = &"SFX"
 

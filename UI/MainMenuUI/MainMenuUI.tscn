@@ -36,7 +36,7 @@ offset_top = 24.0
 offset_right = 69.5
 offset_bottom = 48.0
 grow_horizontal = 2
-text = "Wimsicle Lil Magic Man!"
+text = "Whimsical Lil Magic Man!"
 label_settings = SubResource("LabelSettings_l75au")
 
 [node name="PlayBtn" parent="." instance=ExtResource("2_0w5yf")]
@@ -105,6 +105,7 @@ scale = Vector2(1.71429, 1.71429)
 texture = ExtResource("4_ou2hn")
 
 [node name="ItchBtn" type="LinkButton" parent="."]
+layout_mode = 0
 offset_left = 328.0
 offset_top = 248.0
 offset_right = 352.0

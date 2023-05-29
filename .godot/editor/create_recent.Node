@@ -1,13 +1,15 @@
-AudioStreamPlayer
+Button
+Control
+CanvasLayer
 Label
+NinePatchRect
+Timer
+AudioStreamPlayer
 LinkButton
 HSlider
-Timer
 CollisionShape2D
 Area2D
 RichTextLabel
-NinePatchRect
-Control
 TextureRect
 TextureButton
 NavigationObstacle2D
@@ -15,7 +17,6 @@ NavigationRegion2D
 NavigationAgent2D
 Node2D
 AudioStreamPlayer2D
-CanvasLayer
 TextureProgressBar
 ProgressBar
 GPUParticles2D

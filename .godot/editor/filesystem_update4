@@ -16,3 +16,13 @@ res://Player/Player.tscn
 res://Player/Staff/Staff.tscn
 res://Music/MusicPlayer.tscn
 res://Enemies/Goblin/EnemyGoblin.tscn
+res://GlobalInfo.tscn
+res://World/Rooms/DoorObjects/DoorObj.tscn
+res://PowerUps/PowerUpManager.tscn
+res://MagicBullet/MagicBullet.tscn
+res://World/Pickups/ManaPickup.tscn
+res://Player/Movement.gd
+res://PowerUps/PowerUpCard.tscn
+res://PowerUps/PowerUpManager.gd
+res://World/WorldEnv.tres
+res://PowerUps/PowerUpCard.gd

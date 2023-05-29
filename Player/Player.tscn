@@ -318,6 +318,9 @@ FRICTION = 20
 SPEED = 300
 MAX_SPEED = 1000
 
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.45
+
 [node name="MainCamera" parent="." instance=ExtResource("2_s4cnw")]
 
 [node name="MainSprite" type="AnimatedSprite2D" parent="."]
@@ -359,6 +362,7 @@ stream = SubResource("AudioStreamRandomizer_bdscu")
 max_distance = 500.0
 bus = &"SFX"
 
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 
 [editable path="HurtBox"]

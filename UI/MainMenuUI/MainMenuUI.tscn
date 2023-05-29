@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://btlrt8uwoehmc"]
+[gd_scene load_steps=7 format=3 uid="uid://btlrt8uwoehmc"]
 
 [ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackUI.tscn" id="1_5bkuv"]
 [ext_resource type="Script" path="res://UI/MainMenuUI/MainMenuUI.gd" id="1_ijfmx"]
 [ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="2_0w5yf"]
+[ext_resource type="Texture2D" uid="uid://nief3f78dlsk" path="res://Socials/GithubAsset.png" id="4_ou2hn"]
+[ext_resource type="Texture2D" uid="uid://dv3bdsmgy0x1y" path="res://Socials/ItchAsset.png" id="5_qdftt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l75au"]
 font_size = 25
@@ -22,7 +24,7 @@ layout_mode = 1
 offset_left = -88.0
 offset_top = -116.0
 offset_right = 88.0
-offset_bottom = 76.0
+offset_bottom = 108.0
 
 [node name="Label" type="Label" parent="BackUI"]
 layout_mode = 1
@@ -87,6 +89,33 @@ grow_vertical = 2
 
 [node name="BtnLabel" parent="CreditsBtn" index="0"]
 text = "Credits"
+
+[node name="GithubBtn" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 248.0
+offset_right = 312.0
+offset_bottom = 272.0
+underline = 2
+uri = "https://github.com/SasVel/WhimsicleLilMagicMan"
+
+[node name="GithubAsset" type="Sprite2D" parent="GithubBtn"]
+position = Vector2(12, 12)
+scale = Vector2(1.71429, 1.71429)
+texture = ExtResource("4_ou2hn")
+
+[node name="ItchBtn" type="LinkButton" parent="."]
+offset_left = 328.0
+offset_top = 248.0
+offset_right = 352.0
+offset_bottom = 272.0
+underline = 2
+uri = "https://sasvel.itch.io/wimsiclelilmagicman"
+
+[node name="ItchAsset" type="Sprite2D" parent="ItchBtn"]
+position = Vector2(12, 12)
+scale = Vector2(1.71429, 1.71429)
+texture = ExtResource("5_qdftt")
 
 [connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
 [connection signal="pressed" from="SettingsBtn" to="." method="_on_settings_btn_pressed"]

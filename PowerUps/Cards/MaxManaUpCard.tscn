@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://caubpjdofip5j"]
+
+[ext_resource type="PackedScene" uid="uid://pav6643g05xq" path="res://PowerUps/PowerUpCard.tscn" id="1_tkitm"]
+[ext_resource type="Script" path="res://PowerUps/CardScripts/MaxManaUpCard.gd" id="2_ej1vv"]
+
+[node name="MaxManaUpCard" instance=ExtResource("1_tkitm")]
+script = ExtResource("2_ej1vv")
+
+[node name="Header" parent="Background" index="0"]
+text = "Eats his shrooms"
+
+[node name="MainText" parent="Background" index="1"]
+text = "20% increase in Mana"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

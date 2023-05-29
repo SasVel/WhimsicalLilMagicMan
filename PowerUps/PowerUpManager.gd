@@ -1,6 +1,6 @@
-extends CanvasLayer
+extends Control
 
-var cardPositions = [$MainControl/Card1, $MainControl/Card2, $MainControl/Card3]
+@onready var cardPositions = [$Card1, $Card2, $Card3]
 var possibleCards = []
 
 func _ready():
@@ -21,6 +21,7 @@ func load_cards():
 
 func display_cards():
 	self.visible = true
+	get_tree().paused = true
 	for cardPos in cardPositions:
 		var card = possibleCards.pick_random()
 		if card != null:
@@ -31,5 +32,7 @@ func display_cards():
 
 func on_card_pressed():
 	self.visible = false
+	get_tree().paused = false
 	for cardPos in cardPositions:
-		cardPos.remove_child(0)
+		var cardToRemove = cardPos.get_children()
+		cardToRemove.clear()

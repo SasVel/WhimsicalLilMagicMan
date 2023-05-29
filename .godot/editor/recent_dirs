@@ -1,3 +1,5 @@
+res://PowerUps/CardScripts
+res://PowerUps/Cards
 res://PowerUps
 res://Music
 res://World/Rooms/DungeonRooms
@@ -18,5 +20,3 @@ res://Effects/CustomEffects/HealthUI
 res://Effects
 res://Player
 res://Stats
-res://MagicBullet
-res://Shaders

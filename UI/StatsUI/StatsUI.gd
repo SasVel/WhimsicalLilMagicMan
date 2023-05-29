@@ -5,10 +5,9 @@ extends Control
 @onready var cooldownBar = $CooldownBar
 
 func _ready():
-	healthBar.max_value = PlayerStats.max_health
-	healthBar.value = PlayerStats.health
-	manaBar.max_value = PlayerStats.max_mana
-	manaBar.value = PlayerStats.mana
+	update_health()
+	update_mana()
+	
 	cooldownBar.max_value = PlayerStats.manaRegenTimer.wait_time
 	cooldownBar.value = PlayerStats.manaRegenTimer.time_left
 
@@ -20,12 +19,20 @@ func _physics_process(delta):
 	cooldownBar.value = PlayerStats.manaRegenTimer.wait_time - PlayerStats.manaRegenTimer.time_left
 
 func on_changed_health(val):
+	update_health()
 	healthBar.value = val
 
 func on_changed_mana(val):
+	update_mana()
 	manaBar.value = val
 
 func on_no_health():
 	self.visible = false
 
-	
+func update_health():
+	healthBar.max_value = PlayerStats.max_health
+	healthBar.value = PlayerStats.health
+
+func update_mana():
+	manaBar.max_value = PlayerStats.max_mana
+	manaBar.value = PlayerStats.mana

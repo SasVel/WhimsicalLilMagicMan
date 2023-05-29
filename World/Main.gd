@@ -29,6 +29,7 @@ func change_room(doorVector):
 	RoomFog.clearFog = false
 	activeRoomObj.add_child(activeRoom)
 	set_player_position(doorVector * -1)
+	EnemyTracker.start_tracker()
 	
 func load_next_room():
 	pastRooms.append(activeRoom)

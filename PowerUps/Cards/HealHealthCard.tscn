@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://2pes05pvo06m"]
+
+[ext_resource type="PackedScene" uid="uid://pav6643g05xq" path="res://PowerUps/PowerUpCard.tscn" id="1_d5s1e"]
+[ext_resource type="Script" path="res://PowerUps/CardScripts/HealHealthCard.gd" id="2_vdoal"]
+
+[node name="HealHealthCard" instance=ExtResource("1_d5s1e")]
+script = ExtResource("2_vdoal")
+
+[node name="Header" parent="Background" index="0"]
+text = "Very Healthy"
+
+[node name="MainText" parent="Background" index="1"]
+offset_left = -36.0
+offset_top = -25.0
+offset_right = 37.0
+offset_bottom = 55.0
+text = "Heal to full health!"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

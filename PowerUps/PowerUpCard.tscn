@@ -10,6 +10,7 @@ font_size = 20
 font_size = 15
 
 [node name="PowerUpCard" type="Button"]
+process_mode = 3
 custom_minimum_size = Vector2(95, 130)
 layout_direction = 1
 anchors_preset = 8

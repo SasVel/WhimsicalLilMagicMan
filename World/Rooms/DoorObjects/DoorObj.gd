@@ -21,10 +21,9 @@ func _ready():
 			directionVector = Vector2.RIGHT
 			
 
-func _physics_process(delta):
-	if playerInArea:
-		if Input.is_action_just_pressed("interact"):
-			GlobalInfo.change_room(directionVector)
+func _input(event):
+	if playerInArea && Input.is_action_just_pressed("interact"):
+		GlobalInfo.change_room(directionVector)
 
 func on_no_enemies():
 	self.monitoring = true

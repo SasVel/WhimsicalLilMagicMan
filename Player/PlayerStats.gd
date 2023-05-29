@@ -6,12 +6,12 @@ signal changed_health(val)
 signal no_mana
 signal changed_mana(val)
 
-@export var max_health = 10
-@export var max_mana = 10
+@export var max_health : float = 10.0
+@export var max_mana : float = 10.0
 @export var mana_regen_per_tick = 1
-var health : set = set_health
+var health : float : set = set_health
 
-var mana = 0 : set = set_mana
+var mana : float : set = set_mana
 @onready var manaTickTimer = $ManaTickTimer
 @onready var manaRegenTimer = $ManaRegenTimer
 var canRegenerate = false : set = set_mana_regen_bool
@@ -32,7 +32,7 @@ func set_mana(val):
 		manaRegenTimer.start()
 	
 	emit_signal("changed_mana", val)
-	mana = clamp(val, 0, max_mana)
+	mana = clamp(val, 0, max_mana + 1)
 	if mana <= 0:
 		emit_signal("no_mana")
 	

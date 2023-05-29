@@ -1,11 +1,12 @@
-Button
+AnimationPlayer
 Control
-CanvasLayer
+LinkButton
 Label
+Button
+CanvasLayer
 NinePatchRect
 Timer
 AudioStreamPlayer
-LinkButton
 HSlider
 CollisionShape2D
 Area2D
@@ -24,10 +25,8 @@ StaticBody2D
 CharacterBody2D
 ColorRect
 RigidBody2D
-AnimationPlayer
 AnimatedSprite2D
 Sprite2D
 Camera2D
 TileMap
 AnimationTree
-WorldEnvironment

@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://jl61vuqhndiy"]
 
-[ext_resource type="Script" path="res://Player/Movement.gd" id="1_mc25c"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_ecsyc"]
 [ext_resource type="SpriteFrames" uid="uid://bkw57ne00h0tj" path="res://Player/PlayerFrames.tres" id="2_oncrt"]
 [ext_resource type="PackedScene" uid="uid://cd52a7v1fir0t" path="res://World/Camera/MainCamera.tscn" id="2_s4cnw"]
 [ext_resource type="PackedScene" uid="uid://vg0a2afxvfi6" path="res://Player/Staff/Staff.tscn" id="6_8wy8g"]
@@ -313,7 +313,7 @@ stream_4/weight = 1.0
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 129
-script = ExtResource("1_mc25c")
+script = ExtResource("1_ecsyc")
 FRICTION = 20
 SPEED = 300
 MAX_SPEED = 1000

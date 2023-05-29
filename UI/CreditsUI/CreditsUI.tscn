@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0quv0o3fkgam"]
+[gd_scene load_steps=6 format=3 uid="uid://d0quv0o3fkgam"]
 
 [ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_7c4in"]
 [ext_resource type="Script" path="res://UI/CreditsUI/CreditsUI.gd" id="1_ox2lr"]
 [ext_resource type="LabelSettings" uid="uid://duj40wee72mcl" path="res://UI/HeaderSettings.tres" id="2_tjem5"]
 [ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="3_c0r2k"]
+[ext_resource type="LabelSettings" uid="uid://bl5up3g0uojl" path="res://UI/TextSettings.tres" id="5_fqvml"]
 
 [node name="CreditsUI" type="Control"]
 layout_mode = 3
@@ -39,6 +40,73 @@ offset_bottom = 216.0
 
 [node name="BtnLabel" parent="BackgroundForUI/BackBtn" index="0"]
 text = "Back"
+
+[node name="LinkButton" type="LinkButton" parent="BackgroundForUI"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 104.0
+offset_right = 83.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.427451, 0.427451, 0.427451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Tile Set"
+uri = "https://0x72.itch.io/dungeontileset-ii"
+
+[node name="Label2" type="Label" parent="BackgroundForUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -68.0
+offset_right = 2.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made by SasVel
+
+Resources:"
+label_settings = ExtResource("5_fqvml")
+
+[node name="LinkButton2" type="LinkButton" parent="BackgroundForUI"]
+offset_left = 32.0
+offset_top = 120.0
+offset_right = 83.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.427451, 0.427451, 0.427451, 1)
+theme_override_font_sizes/font_size = 20
+text = "GUI"
+uri = "https://paperhatlizard.itch.io/cryos-mini-gui"
+
+[node name="LinkButton3" type="LinkButton" parent="BackgroundForUI"]
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 83.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.427451, 0.427451, 0.427451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Font"
+uri = "https://managore.itch.io/m3x6"
+
+[node name="LinkButton5" type="LinkButton" parent="BackgroundForUI"]
+offset_left = 32.0
+offset_top = 152.0
+offset_right = 83.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.427451, 0.427451, 0.427451, 1)
+theme_override_font_sizes/font_size = 20
+text = "Enemy"
+uri = "https://o-lobster.itch.io/simple-dungeon-crawler-16x16-pixel-pack"
 
 [connection signal="pressed" from="BackgroundForUI/BackBtn" to="." method="_on_back_btn_pressed"]
 

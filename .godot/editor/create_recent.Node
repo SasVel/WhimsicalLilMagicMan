@@ -1,4 +1,5 @@
 Label
+LinkButton
 HSlider
 Timer
 CollisionShape2D
@@ -7,7 +8,6 @@ RichTextLabel
 NinePatchRect
 Control
 TextureRect
-LinkButton
 TextureButton
 NavigationObstacle2D
 NavigationRegion2D

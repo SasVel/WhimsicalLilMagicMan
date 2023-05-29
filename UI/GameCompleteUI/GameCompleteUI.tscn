@@ -3,10 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_awinf"]
 [ext_resource type="Script" path="res://UI/GameCompleteUI/GameCompleteUI.gd" id="1_xiwct"]
 [ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="3_44dya"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_87oqb"]
-font_size = 20
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="LabelSettings" uid="uid://duj40wee72mcl" path="res://UI/HeaderSettings.tres" id="3_yh1cc"]
 
 [node name="GameCompleteUI" type="Control"]
 process_mode = 3
@@ -20,9 +17,8 @@ script = ExtResource("1_xiwct")
 
 [node name="BackgroundForUI" parent="." instance=ExtResource("1_awinf")]
 layout_mode = 1
-offset_left = -104.0
 offset_top = -108.0
-offset_right = 104.0
+offset_right = 112.0
 offset_bottom = 108.0
 
 [node name="Label" type="Label" parent="BackgroundForUI"]
@@ -38,7 +34,7 @@ grow_horizontal = 2
 text = "Wow! Congrats! You did it!
 Game completed!
 WOOOOOOOOOOOOOOOO!!"
-label_settings = SubResource("LabelSettings_87oqb")
+label_settings = ExtResource("3_yh1cc")
 horizontal_alignment = 1
 vertical_alignment = 1
 

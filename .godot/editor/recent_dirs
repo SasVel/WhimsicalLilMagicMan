@@ -1,3 +1,6 @@
+res://UI
+res://UI/CreditsUI
+res://UI/SettingsUI
 res://UI/SoundSettingsUI
 res://UI/GameCompleteUI
 res://UI/GameOverUI
@@ -17,6 +20,3 @@ res://MagicBullet
 res://Shaders
 res://World/Tiles
 res://
-res://Enemies/Goblin/Assets
-res://Enemies/Goblin
-res://Player/Assets

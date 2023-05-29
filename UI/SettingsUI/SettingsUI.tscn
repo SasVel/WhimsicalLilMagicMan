@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtjh2wnxkuwb1"]
+
+[ext_resource type="Script" path="res://UI/SettingsUI/SettingsUI.gd" id="1_cbfn1"]
+[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_nklf2"]
+[ext_resource type="PackedScene" uid="uid://cy34wfvkpw7eb" path="res://UI/SoundSettingsUI/SoundSettingsUI.tscn" id="2_g1jbg"]
+[ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="3_xusnt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hn258"]
+line_spacing = 0.0
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="SettingsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbfn1")
+
+[node name="BackgroundForUI" parent="." instance=ExtResource("1_nklf2")]
+layout_mode = 1
+offset_left = -104.0
+offset_top = -124.0
+offset_right = 104.0
+offset_bottom = 132.0
+
+[node name="SoundSettingsUI" parent="BackgroundForUI" instance=ExtResource("2_g1jbg")]
+offset_left = 24.0
+offset_top = 40.0
+offset_right = 178.0
+offset_bottom = 200.0
+
+[node name="Label" type="Label" parent="BackgroundForUI"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 24.0
+offset_right = 133.0
+offset_bottom = 48.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_hn258")
+
+[node name="BackBtn" parent="BackgroundForUI" instance=ExtResource("3_xusnt")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 200.0
+offset_right = 136.0
+offset_bottom = 232.0
+
+[node name="BtnLabel" parent="BackgroundForUI/BackBtn" index="0"]
+text = "Back"
+
+[connection signal="pressed" from="BackgroundForUI/BackBtn" to="." method="_on_back_btn_pressed"]
+
+[editable path="BackgroundForUI/BackBtn"]

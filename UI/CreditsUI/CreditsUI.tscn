@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0quv0o3fkgam"]
+
+[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_7c4in"]
+[ext_resource type="Script" path="res://UI/CreditsUI/CreditsUI.gd" id="1_ox2lr"]
+[ext_resource type="LabelSettings" uid="uid://duj40wee72mcl" path="res://UI/HeaderSettings.tres" id="2_tjem5"]
+[ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="3_c0r2k"]
+
+[node name="CreditsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ox2lr")
+
+[node name="BackgroundForUI" parent="." instance=ExtResource("1_7c4in")]
+layout_mode = 1
+offset_left = -104.0
+offset_top = -116.0
+offset_right = 104.0
+offset_bottom = 116.0
+
+[node name="Label" type="Label" parent="BackgroundForUI"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 20.0
+offset_right = 132.0
+offset_bottom = 47.0
+text = "Credits!"
+label_settings = ExtResource("2_tjem5")
+
+[node name="BackBtn" parent="BackgroundForUI" instance=ExtResource("3_c0r2k")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 184.0
+offset_right = 136.0
+offset_bottom = 216.0
+
+[node name="BtnLabel" parent="BackgroundForUI/BackBtn" index="0"]
+text = "Back"
+
+[connection signal="pressed" from="BackgroundForUI/BackBtn" to="." method="_on_back_btn_pressed"]
+
+[editable path="BackgroundForUI/BackBtn"]

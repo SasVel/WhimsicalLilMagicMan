@@ -6,3 +6,11 @@ res://UI/MainMenuUI/MainMenuUI.tscn
 res://UI/SettingsUI/SettingsUI.tscn
 res://UI/GameCompleteUI/GameCompleteUI.tscn
 res://UI/Background/BackUI.tscn
+res://World/Rooms/DungeonRooms/Room3.tscn
+res://Shaders/BlinkShader.gdshader
+res://World/Rooms/DungeonRooms/Room4.tscn
+res://World/Rooms/DungeonRooms/Room5.tscn
+res://UI/SoundSettingsUI/SoundSettingsUI.tscn
+res://Player/PlayerStats.tscn
+res://Player/Player.tscn
+res://Player/Staff/Staff.tscn

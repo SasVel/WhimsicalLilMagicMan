@@ -5,7 +5,7 @@
 
 [node name="PlayerStats" instance=ExtResource("1_w4q2y")]
 script = ExtResource("2_m6aku")
-max_mana = 20
+max_mana = 50
 mana_regen_per_tick = 1
 
 [node name="ManaTickTimer" type="Timer" parent="." index="0"]

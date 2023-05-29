@@ -1,3 +1,5 @@
+res://World/Rooms/DungeonRooms
+res://World/Rooms
 res://UI
 res://UI/CreditsUI
 res://UI/SettingsUI
@@ -8,8 +10,6 @@ res://UI/MainMenuUI
 res://UI/Background
 res://UI/Buttons/YellowButton
 res://UI/PauseUI
-res://World/Rooms
-res://World/Rooms/DungeonRooms
 res://World/Rooms/DoorObjects
 res://World/Pickups
 res://Effects/CustomEffects/HealthUI

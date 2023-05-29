@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b0xxrefeefck8" path="res://UI/PaperUIAsset.png" id="1_14qhk"]
 [ext_resource type="Texture2D" uid="uid://d1dgrat8p7ucy" path="res://UI/PaperUISwirly.png" id="2_80t3v"]
 
-[node name="BackgroundForUI" type="Control"]
+[node name="BackUI" type="Control"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 3
 anchors_preset = 8

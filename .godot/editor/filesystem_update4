@@ -5,3 +5,4 @@ res://UI/HeaderSettings.tres
 res://UI/MainMenuUI/MainMenuUI.tscn
 res://UI/SettingsUI/SettingsUI.tscn
 res://UI/GameCompleteUI/GameCompleteUI.tscn
+res://UI/Background/BackUI.tscn

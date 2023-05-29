@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://2ojvvwqeftmm"]
 
-[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_cjsri"]
+[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackUI.tscn" id="1_cjsri"]
 [ext_resource type="Script" path="res://UI/GameOverUI/GameOverUI.gd" id="1_v4jbp"]
 [ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="3_wtsd6"]
 

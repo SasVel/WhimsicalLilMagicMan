@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://btlrt8uwoehmc"]
 
-[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_5bkuv"]
+[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackUI.tscn" id="1_5bkuv"]
 [ext_resource type="Script" path="res://UI/MainMenuUI/MainMenuUI.gd" id="1_ijfmx"]
 [ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="2_0w5yf"]
 
@@ -17,14 +17,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ijfmx")
 
-[node name="BackgroundForUI" parent="." instance=ExtResource("1_5bkuv")]
+[node name="BackUI" parent="." instance=ExtResource("1_5bkuv")]
 layout_mode = 1
 offset_left = -88.0
 offset_top = -116.0
 offset_right = 88.0
 offset_bottom = 76.0
 
-[node name="Label" type="Label" parent="BackgroundForUI"]
+[node name="Label" type="Label" parent="BackUI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

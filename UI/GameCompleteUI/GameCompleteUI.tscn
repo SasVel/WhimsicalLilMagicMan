@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://duwstrcc1okos"]
 
-[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackgroundForUI.tscn" id="1_awinf"]
+[ext_resource type="PackedScene" uid="uid://dctgnqjntlltv" path="res://UI/Background/BackUI.tscn" id="1_awinf"]
 [ext_resource type="Script" path="res://UI/GameCompleteUI/GameCompleteUI.gd" id="1_xiwct"]
 [ext_resource type="PackedScene" uid="uid://bhpe82eqte5tv" path="res://UI/Buttons/YellowButton/BasicButton.tscn" id="3_44dya"]
 [ext_resource type="LabelSettings" uid="uid://duj40wee72mcl" path="res://UI/HeaderSettings.tres" id="3_yh1cc"]
@@ -15,13 +15,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xiwct")
 
-[node name="BackgroundForUI" parent="." instance=ExtResource("1_awinf")]
+[node name="BackUI" parent="." instance=ExtResource("1_awinf")]
 layout_mode = 1
 offset_top = -108.0
 offset_right = 112.0
 offset_bottom = 108.0
 
-[node name="Label" type="Label" parent="BackgroundForUI"]
+[node name="Label" type="Label" parent="BackUI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -38,7 +38,7 @@ label_settings = ExtResource("3_yh1cc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RestartBtn" parent="BackgroundForUI" instance=ExtResource("3_44dya")]
+[node name="RestartBtn" parent="BackUI" instance=ExtResource("3_44dya")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,10 +52,10 @@ offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BtnLabel" parent="BackgroundForUI/RestartBtn" index="0"]
+[node name="BtnLabel" parent="BackUI/RestartBtn" index="0"]
 text = "Restart"
 
-[node name="MainMenu" parent="BackgroundForUI" instance=ExtResource("3_44dya")]
+[node name="MainMenu" parent="BackUI" instance=ExtResource("3_44dya")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -69,11 +69,11 @@ offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BtnLabel" parent="BackgroundForUI/MainMenu" index="0"]
+[node name="BtnLabel" parent="BackUI/MainMenu" index="0"]
 text = "Mian Menu"
 
-[connection signal="pressed" from="BackgroundForUI/RestartBtn" to="." method="_on_restart_btn_pressed"]
-[connection signal="pressed" from="BackgroundForUI/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="BackUI/RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="BackUI/MainMenu" to="." method="_on_main_menu_pressed"]
 
-[editable path="BackgroundForUI/RestartBtn"]
-[editable path="BackgroundForUI/MainMenu"]
+[editable path="BackUI/RestartBtn"]
+[editable path="BackUI/MainMenu"]

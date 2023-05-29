@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhs3xpc04884e"]
+
+[ext_resource type="PackedScene" uid="uid://pav6643g05xq" path="res://PowerUps/PowerUpCard.tscn" id="1_di1dh"]
+[ext_resource type="Script" path="res://PowerUps/CardScripts/FasterManaRegenCard.gd" id="2_i18og"]
+
+[node name="FasterManaRegenCard" instance=ExtResource("1_di1dh")]
+script = ExtResource("2_i18og")
+
+[node name="Header" parent="Background" index="0"]
+text = "Better woosh"
+
+[node name="MainText" parent="Background" index="1"]
+text = "25% faster mana
+regeneration"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

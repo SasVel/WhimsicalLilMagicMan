@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://qlax15qibrp0"]
+
+[ext_resource type="PackedScene" uid="uid://pav6643g05xq" path="res://PowerUps/PowerUpCard.tscn" id="1_jxhi1"]
+[ext_resource type="Script" path="res://PowerUps/CardScripts/PlayerSpeedUpCard.gd" id="2_4rl1o"]
+
+[node name="PlayerSpeedUpCard" instance=ExtResource("1_jxhi1")]
+script = ExtResource("2_4rl1o")
+
+[node name="Header" parent="Background" index="0"]
+text = "HE IS SPEED"
+
+[node name="MainText" parent="Background" index="1"]
+text = "20% increase
+player speed"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

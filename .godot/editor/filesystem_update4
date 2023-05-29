@@ -25,3 +25,12 @@ res://UI/StatsUI/StatsUI.gd
 res://PowerUps/CardScripts/MaxManaUpCard.gd
 res://PowerUps/Cards/MaxManaUpCard.tscn
 res://Player/Player.tscn
+res://PowerUps/CardScripts/ShootSpeedUpCard.gd
+res://PowerUps/Cards/ShootSpeedUpCard.tscn
+res://PowerUps/CardScripts/PlayerSpeedUpCard.gd
+res://PowerUps/Cards/PlayerSpeedUpCard.tscn
+res://Player/Player.gd
+res://PowerUps/CardScripts/LessManaCooldownCard.gd
+res://PowerUps/Cards/LessManaCooldownCard.tscn
+res://PowerUps/CardScripts/FasterManaRegenCard.gd
+res://PowerUps/Cards/FasterManaRegenCard.tscn

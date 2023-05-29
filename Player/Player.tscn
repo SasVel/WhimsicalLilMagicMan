@@ -314,9 +314,7 @@ y_sort_enabled = true
 collision_layer = 2
 collision_mask = 129
 script = ExtResource("1_ecsyc")
-FRICTION = 20
-SPEED = 300
-MAX_SPEED = 1000
+MAX_SPEED = 1200.0
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.45

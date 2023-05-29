@@ -1,11 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
-@export var ACCELERATION = 60;
-@export var FRICTION = 40;
-@export var SPEED = 500;
-@export var MAX_SPEED = 1500;
-var CURR_SPEED = SPEED;
+@export var ACCELERATION : float = 60;
+@export var FRICTION : float = 40;
+@export var SPEED : float = 500.0;
+@export var MAX_SPEED : float = 1500.0;
+var CURR_SPEED : float = SPEED;
 @onready var staff = $Staff
 @onready var Bullet = preload("res://MagicBullet/MagicBullet.tscn")
 @onready var shootTimer = $ShootTimer

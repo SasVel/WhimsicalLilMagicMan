@@ -110,7 +110,7 @@ pause={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
+renderer/rendering_method="mobile"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/glow/upscale_mode=0
 environment/defaults/default_clear_color=Color(0.137255, 0.12549, 0.341176, 1)

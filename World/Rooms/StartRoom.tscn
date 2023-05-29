@@ -13,7 +13,7 @@ font_size = 18
 size = Vector2(432, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7irc5"]
-size = Vector2(31, 17)
+size = Vector2(31, 24.5)
 
 [node name="StartRoom" instance=ExtResource("1_i1m3r")]
 
@@ -69,7 +69,7 @@ shape = SubResource("RectangleShape2D_b3j0r")
 position = Vector2(336, 105)
 
 [node name="CollisionShape2D" parent="DoorObjUp" index="0"]
-position = Vector2(0, 7)
+position = Vector2(0, 3.25)
 shape = SubResource("RectangleShape2D_7irc5")
 
 [node name="CollisionShape2D" parent="DoorObjDown" index="0"]

@@ -3,6 +3,7 @@
 [resource]
 background_mode = 3
 background_color = Color(0.219608, 0.203922, 0.509804, 1)
-tonemap_mode = 1
+tonemap_mode = 2
+tonemap_white = 1.91
 glow_blend_mode = 0
 glow_hdr_threshold = 2.06

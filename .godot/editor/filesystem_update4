@@ -1,4 +1,8 @@
 res://default_bus_layout.tres
+res://World/Pickups/PickupsSpawner.tscn
+res://World/WorldEnv.tres
+res://UI/HeaderSettings.tres
+res://World/Pickups/PickupsSpawner.gd
 res://PowerUps/Cards/HealHealthCard.tscn
 res://PowerUps/PowerUpCard.tscn
 res://PowerUps/Cards/MaxHealthUpCard.tscn
@@ -10,6 +14,5 @@ res://PowerUps/Cards/FasterManaRegenCard.tscn
 res://UI/MainMenuUI/MainMenuUI.tscn
 res://PowerUps/PowerUpManager.tscn
 res://World/Main.tscn
-res://World/WorldEnv.tres
-res://UI/HeaderSettings.tres
 res://World/Rooms/StartRoom.tscn
+res://UI/PauseUI/PauseUI.tscn

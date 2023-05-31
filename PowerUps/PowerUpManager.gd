@@ -1,23 +1,25 @@
 extends Control
 
-@onready var cardPositions = [$Card1, $Card2, $Card3]
+@onready var cardPositions = [$CardPos1, $CardPos2, $CardPos3]
 var possibleCards = []
 
 func _ready():
 	self.visible = false
 	EnemyTracker.no_enemies.connect(display_cards)
 	load_cards()
-	
 
 func load_cards():
 	var path = "res://PowerUps/Cards/"
-	var dir = DirAccess.open(path)
-	if dir:
-		dir.list_dir_begin()
-		var fileName = dir.get_next()
-		while fileName != "":
-			possibleCards.append(load(path + fileName))
-			fileName = dir.get_next()
+	var cardCounter = 0
+	while cardCounter != null:
+		cardCounter += 1
+		var pathToCard = path + "Card" + str(cardCounter) + ".tscn"
+		if !FileAccess.file_exists(pathToCard):
+			cardCounter = null
+			break
+		else:
+			var card = load(pathToCard)
+			possibleCards.append(card)
 
 func display_cards():
 	self.visible = true
@@ -27,6 +29,7 @@ func display_cards():
 		if card != null:
 			card = card.instantiate() as Card
 			card.pressed.connect(on_card_pressed)
+			#card.position = Vector2.ZERO
 			cardPos.add_child(card)
 			
 
@@ -36,3 +39,5 @@ func on_card_pressed():
 	for cardPos in cardPositions:
 		var cardToRemove = cardPos.get_children()
 		cardToRemove.clear()
+
+

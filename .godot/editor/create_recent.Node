@@ -1,5 +1,6 @@
-AnimationPlayer
 Control
+Node2D
+AnimationPlayer
 LinkButton
 Label
 Button
@@ -16,7 +17,6 @@ TextureButton
 NavigationObstacle2D
 NavigationRegion2D
 NavigationAgent2D
-Node2D
 AudioStreamPlayer2D
 TextureProgressBar
 ProgressBar

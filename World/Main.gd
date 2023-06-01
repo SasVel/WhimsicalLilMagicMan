@@ -18,7 +18,8 @@ func load_rooms():
 		dir.list_dir_begin()
 		var fileName = dir.get_next()
 		while fileName != "":
-			rooms.append(load(path + fileName))
+			fileName = fileName.replace(".remap", "") 
+			rooms.append(ResourceLoader.load(path + fileName))
 			fileName = dir.get_next()
 
 func change_room(doorVector):

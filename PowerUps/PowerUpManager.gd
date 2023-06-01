@@ -16,7 +16,8 @@ func load_cards():
 		dir.list_dir_begin()
 		var fileName = dir.get_next()
 		while fileName != "":
-			possibleCards.append(load(path + fileName))
+			fileName = fileName.replace(".remap", "") 
+			possibleCards.append(ResourceLoader.load(path + fileName))
 			fileName = dir.get_next()
 
 func display_cards():

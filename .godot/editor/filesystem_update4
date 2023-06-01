@@ -1,5 +1,9 @@
 res://default_bus_layout.tres
 res://PowerUps/Cards/HealHealthCard.tscn
+res://World/WorldEnv.tres
+res://UI/HeaderSettings.tres
+res://Shaders/BlinkShader.gdshader
+res://UI/TextSettings.tres
 res://PowerUps/PowerUpCard.tscn
 res://PowerUps/Cards/MaxHealthUpCard.tscn
 res://Player/PlayerStats.tscn
@@ -10,6 +14,6 @@ res://PowerUps/Cards/FasterManaRegenCard.tscn
 res://UI/MainMenuUI/MainMenuUI.tscn
 res://PowerUps/PowerUpManager.tscn
 res://World/Main.tscn
-res://World/WorldEnv.tres
-res://UI/HeaderSettings.tres
 res://World/Rooms/StartRoom.tscn
+res://UI/GameOverUI/GameOverUI.tscn
+res://UI/GameOverUI/GameOverUI.gd

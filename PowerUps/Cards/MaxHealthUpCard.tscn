@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxitijm61n451"]
+
+[ext_resource type="PackedScene" uid="uid://pav6643g05xq" path="res://PowerUps/PowerUpCard.tscn" id="1_6euyq"]
+[ext_resource type="Script" path="res://PowerUps/CardScripts/MaxHealthUpCard.gd" id="2_qn2iq"]
+
+[node name="MaxHealthUpCard" instance=ExtResource("1_6euyq")]
+script = ExtResource("2_qn2iq")
+
+[node name="Header" parent="Background" index="0"]
+text = "Eats his veggies"
+
+[node name="MainText" parent="Background" index="1"]
+text = "20% increased HP"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

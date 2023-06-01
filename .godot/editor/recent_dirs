@@ -1,7 +1,6 @@
-G:/Godot/Projects/Exported/MagicMan
-res://PowerUps
 res://PowerUps/CardScripts
 res://PowerUps/Cards
+res://PowerUps
 res://Player
 res://Music
 res://World/Rooms/DungeonRooms
@@ -20,3 +19,4 @@ res://World/Rooms/DoorObjects
 res://World/Pickups
 res://Effects/CustomEffects/HealthUI
 res://Effects
+res://Stats

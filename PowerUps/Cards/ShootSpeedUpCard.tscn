@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://w65boxl5ysh4"]
+
+[ext_resource type="PackedScene" uid="uid://pav6643g05xq" path="res://PowerUps/PowerUpCard.tscn" id="1_1noy2"]
+[ext_resource type="Script" path="res://PowerUps/CardScripts/ShootSpeedUpCard.gd" id="2_ayvps"]
+
+[node name="ShootSpeedUpCard" instance=ExtResource("1_1noy2")]
+script = ExtResource("2_ayvps")
+
+[node name="Header" parent="Background" index="0"]
+text = "RATATATA"
+
+[node name="MainText" parent="Background" index="1"]
+text = "10% increased
+shoot speed"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

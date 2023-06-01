@@ -1,7 +1,5 @@
 res://default_bus_layout.tres
 res://PowerUps/Cards/HealHealthCard.tscn
-res://World/WorldEnv.tres
-res://UI/HeaderSettings.tres
 res://PowerUps/PowerUpCard.tscn
 res://PowerUps/Cards/MaxHealthUpCard.tscn
 res://Player/PlayerStats.tscn
@@ -12,15 +10,6 @@ res://PowerUps/Cards/FasterManaRegenCard.tscn
 res://UI/MainMenuUI/MainMenuUI.tscn
 res://PowerUps/PowerUpManager.tscn
 res://World/Main.tscn
+res://World/WorldEnv.tres
+res://UI/HeaderSettings.tres
 res://World/Rooms/StartRoom.tscn
-res://World/Pickups/PickupsSpawner.tscn
-res://World/Main.gd
-res://PowerUps/PowerUpManager.gd
-res://PowerUps/Cards/Card4.tscn
-res://PowerUps/Cards/Card7.tscn
-res://PowerUps/Cards/Card6.tscn
-res://World/Rooms/EnemyTracker.tscn
-res://PowerUps/Cards/Card1.tscn
-res://PowerUps/Cards/Card2.tscn
-res://PowerUps/Cards/Card3.tscn
-res://PowerUps/Cards/Card5.tscn

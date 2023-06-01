@@ -13,18 +13,13 @@ func _ready():
 
 func load_rooms():
 	var path = "res://World/Rooms/DungeonRooms/"
-	var levelCounter = 0
-	while levelCounter != null:
-		levelCounter += 1
-		var pathToRoom = path + "Room" + str(levelCounter) + ".tscn"
-		if !FileAccess.file_exists(pathToRoom):
-			levelCounter = null
-			break
-		else:
-			var room = load(pathToRoom)
-			rooms.append(room)
-		
-		
+	var dir = DirAccess.open(path)
+	if dir:
+		dir.list_dir_begin()
+		var fileName = dir.get_next()
+		while fileName != "":
+			rooms.append(load(path + fileName))
+			fileName = dir.get_next()
 
 func change_room(doorVector):
 	load_next_room()

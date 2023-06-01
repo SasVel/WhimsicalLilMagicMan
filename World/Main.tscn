@@ -4,12 +4,12 @@
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
 [ext_resource type="PackedScene" uid="uid://jl61vuqhndiy" path="res://Player/Player.tscn" id="2_hyuqm"]
 [ext_resource type="PackedScene" uid="uid://cft5rctwc3rus" path="res://World/Rooms/StartRoom.tscn" id="3_gjgy4"]
+[ext_resource type="PackedScene" uid="uid://bagkri8f5pwal" path="res://PowerUps/PowerUpManager.tscn" id="5_x4rxu"]
 [ext_resource type="PackedScene" uid="uid://cr4pgto0p0mnw" path="res://UI/StatsUI/StatsUI.tscn" id="5_yhy40"]
 [ext_resource type="PackedScene" uid="uid://cb6gmjn2sr368" path="res://UI/PauseUI/PauseUI.tscn" id="6_84hs3"]
 [ext_resource type="PackedScene" uid="uid://cqqp6cjqwid1w" path="res://World/Pickups/ManaPickup.tscn" id="7_b1n6y"]
 [ext_resource type="PackedScene" uid="uid://2ojvvwqeftmm" path="res://UI/GameOverUI/GameOverUI.tscn" id="7_wcexn"]
 [ext_resource type="PackedScene" uid="uid://duwstrcc1okos" path="res://UI/GameCompleteUI/GameCompleteUI.tscn" id="8_8jmpy"]
-[ext_resource type="PackedScene" uid="uid://bagkri8f5pwal" path="res://PowerUps/PowerUpManager.tscn" id="9_mgqdc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lgxgr"]
 vertices = PackedVector2Array(660, 23, 658, 390, 13, 394, 12, 24)
@@ -49,7 +49,8 @@ visible = false
 [node name="GameCompleteUI" parent="UI" instance=ExtResource("8_8jmpy")]
 visible = false
 
-[node name="PowerUpManager" parent="UI" instance=ExtResource("9_mgqdc")]
+[node name="PowerUpManager" parent="UI" instance=ExtResource("5_x4rxu")]
+visible = false
 
 [node name="ManaPickup" parent="." instance=ExtResource("7_b1n6y")]
 position = Vector2(216, 143)

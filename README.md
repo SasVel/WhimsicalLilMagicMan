@@ -1,2 +1,2 @@
 # MagicMan
- A project for the GameDev.tv game jam 2023
+ A silly little magic man trying to escape a scary, but silly little dungeon.

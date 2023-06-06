@@ -7,10 +7,7 @@ class_name Player
 @export var MAX_SPEED : float = 1500.0;
 var CURR_SPEED : float = SPEED;
 @onready var staff = $Staff
-@onready var Bullet = preload("res://MagicBullet/MagicBullet.tscn")
-@onready var shootTimer = $ShootTimer
-var canShoot = true
-@onready var whooshPlayer = $WhooshPlayer
+@onready var spellsController = $SpellsController
 
 enum {
 	IDLE,
@@ -72,25 +69,11 @@ func _physics_process(delta):
 			GlobalInfo.worldState = GlobalInfo.worldStateEnum.MAIN
 	
 	if Input.is_action_pressed("shoot") && GlobalInfo.worldState == GlobalInfo.worldStateEnum.MAIN:
-		shoot()
+		spellsController.shoot()
 	
 	GlobalInfo.playerPos = self.position
 	move_and_slide()
 	
-func shoot():
-	if canShoot:
-		var bullet = Bullet.instantiate()
-		if PlayerStats.mana >= bullet.mana_cost:
-			bullet.position = staff.gemPos
-			get_tree().get_root().add_child(bullet)
-			
-			whooshPlayer.play()
-			shootTimer.start()
-			canShoot = false
-		
-func _on_shoot_timer_timeout():
-	canShoot = true
-
 func _on_hurt_box_area_entered(area):
 	PlayerStats.health -= area.damage
 	var enemy = area.get_parent()

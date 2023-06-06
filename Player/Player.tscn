@@ -1,15 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://jl61vuqhndiy"]
+[gd_scene load_steps=32 format=3 uid="uid://jl61vuqhndiy"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_ecsyc"]
+[ext_resource type="PackedScene" uid="uid://dkc2wvmvtjts3" path="res://Player/SpellsController.tscn" id="2_aoejh"]
 [ext_resource type="SpriteFrames" uid="uid://bkw57ne00h0tj" path="res://Player/PlayerFrames.tres" id="2_oncrt"]
 [ext_resource type="PackedScene" uid="uid://cd52a7v1fir0t" path="res://World/Camera/MainCamera.tscn" id="2_s4cnw"]
 [ext_resource type="PackedScene" uid="uid://vg0a2afxvfi6" path="res://Player/Staff/Staff.tscn" id="6_8wy8g"]
-[ext_resource type="AudioStream" uid="uid://qdohspxsh26j" path="res://MagicBullet/Sounds/MagicMissleWhoosh01.ogg" id="6_i6k11"]
 [ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="6_ovi2f"]
-[ext_resource type="AudioStream" uid="uid://glse4mar72lf" path="res://MagicBullet/Sounds/MagicMissleWhoosh02.ogg" id="7_2exjf"]
-[ext_resource type="AudioStream" uid="uid://eo7iw67g4gun" path="res://MagicBullet/Sounds/MagicMissleWhoosh03.ogg" id="8_0a37h"]
-[ext_resource type="AudioStream" uid="uid://cso0m1naae4ga" path="res://MagicBullet/Sounds/MagicMissleWhoosh04.ogg" id="9_hi24t"]
-[ext_resource type="AudioStream" uid="uid://di5ka8h0vx03x" path="res://MagicBullet/Sounds/MagicMissleWhoosh05.ogg" id="10_56psj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fwx1s"]
 radius = 3.0
@@ -296,19 +292,6 @@ transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_a
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_xskl6"]
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bdscu"]
-streams_count = 5
-stream_0/stream = ExtResource("6_i6k11")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("7_2exjf")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("8_0a37h")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("9_hi24t")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("10_56psj")
-stream_4/weight = 1.0
-
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 2
@@ -316,8 +299,7 @@ collision_mask = 129
 script = ExtResource("1_ecsyc")
 MAX_SPEED = 1200.0
 
-[node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.45
+[node name="SpellsController" parent="." instance=ExtResource("2_aoejh")]
 
 [node name="MainCamera" parent="." instance=ExtResource("2_s4cnw")]
 
@@ -355,12 +337,6 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_xskl6")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Run/blend_position = Vector2(0.348485, -0.331441)
 
-[node name="WhooshPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_bdscu")
-max_distance = 500.0
-bus = &"SFX"
-
-[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 
 [editable path="HurtBox"]

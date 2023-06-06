@@ -79,6 +79,9 @@ position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_l8ad4")
 
 [editable path="PickupsSpawner"]
+[editable path="Enemies/EnemyGoblin2"]
+[editable path="Enemies/EnemyGoblin2/HitBox"]
+[editable path="Enemies/EnemyGoblin2/HurtBox"]
 [editable path="DoorObjUp"]
 [editable path="DoorObjDown"]
 [editable path="DoorObjLeft"]

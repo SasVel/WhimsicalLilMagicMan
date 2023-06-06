@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkc2wvmvtjts3"]
+
+[ext_resource type="Script" path="res://Player/SpellsController.gd" id="1_myfq4"]
+[ext_resource type="AudioStream" uid="uid://qdohspxsh26j" path="res://MagicBullet/Sounds/MagicMissleWhoosh01.ogg" id="2_4v4s3"]
+[ext_resource type="AudioStream" uid="uid://glse4mar72lf" path="res://MagicBullet/Sounds/MagicMissleWhoosh02.ogg" id="3_ts8ff"]
+[ext_resource type="AudioStream" uid="uid://eo7iw67g4gun" path="res://MagicBullet/Sounds/MagicMissleWhoosh03.ogg" id="4_cmnmx"]
+[ext_resource type="AudioStream" uid="uid://cso0m1naae4ga" path="res://MagicBullet/Sounds/MagicMissleWhoosh04.ogg" id="5_uewo0"]
+[ext_resource type="AudioStream" uid="uid://di5ka8h0vx03x" path="res://MagicBullet/Sounds/MagicMissleWhoosh05.ogg" id="6_g2mrl"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2i2fb"]
+streams_count = 5
+stream_0/stream = ExtResource("2_4v4s3")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_ts8ff")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_cmnmx")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("5_uewo0")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("6_g2mrl")
+stream_4/weight = 1.0
+
+[node name="SpellsController" type="Node2D"]
+script = ExtResource("1_myfq4")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.45
+
+[node name="WhooshPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_2i2fb")
+max_distance = 500.0
+bus = &"SFX"
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

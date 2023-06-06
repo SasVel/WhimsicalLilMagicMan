@@ -7,6 +7,7 @@ var directionToPlayer = Vector2.ZERO
 @onready var navAgent = $NavigationAgent2D
 @onready var stats = $Stats
 @onready var hitSound = $HitSoundPlayer
+@onready var animationPlayer = $AnimationPlayer
 
 enum {
 	IDLE,
@@ -52,16 +53,25 @@ func _on_player_detection_zone_body_exited(body):
 
 func world_state_changed(val):
 	if val == 1:
-		sprites.material.set_shader_parameter("flash_opacity", 0.7)
-		sprites.material.set_shader_parameter("flash_color", Color.WHITE)
+		set_enemy_color_white()
 	else:
-		sprites.material.set_shader_parameter("flash_opacity", 0)
+		set_enemy_color_neutral()
 
 func _on_hurt_box_area_entered(area):
 	var entity = area.get_parent()
 	self.apply_central_impulse(entity.velocity * 2)
 	stats.health -= area.damage
+	
+	animationPlayer.play("EnemyHit")
 	hitSound.play()
+
+func set_enemy_color_white():
+	sprites.material.shader.resource_local_to_scene = true
+	sprites.material.set_shader_parameter("flash_opacity", 0.9)
+	sprites.material.set_shader_parameter("flash_color", Color.WHITE)
+
+func set_enemy_color_neutral():
+	sprites.material.set_shader_parameter("flash_opacity", 0)
 
 func _on_stats_no_health():
 	queue_free()

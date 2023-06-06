@@ -1,8 +1,10 @@
+res://Shaders
+res://Enemies
+res://Player
 res://PowerUps/CardScripts
 res://PowerUps/Cards
 res://PowerUps
 C:/Projects/Godot/Exported/MagicMan
-res://Player
 res://Music
 res://World/Rooms/DungeonRooms
 res://World/Rooms
@@ -18,5 +20,3 @@ res://UI/Buttons/YellowButton
 res://UI/PauseUI
 res://World/Rooms/DoorObjects
 res://World/Pickups
-res://Effects/CustomEffects/HealthUI
-res://Effects

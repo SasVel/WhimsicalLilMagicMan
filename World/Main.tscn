@@ -54,3 +54,4 @@ visible = false
 
 [node name="ManaPickup" parent="." instance=ExtResource("7_b1n6y")]
 position = Vector2(216, 143)
+mana_on_pickup = 30.0

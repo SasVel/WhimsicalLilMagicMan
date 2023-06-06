@@ -1,7 +1,7 @@
 extends Area2D
 class_name ManaPickup
 
-@export var mana_on_pickup = 30
+@export var mana_on_pickup : float = 30
 
 func _ready():
 	GlobalInfo.world_state_changed.connect(pickup_activation)

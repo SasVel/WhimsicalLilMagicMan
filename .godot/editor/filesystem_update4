@@ -1,8 +1,12 @@
 res://default_bus_layout.tres
+res://World/Pickups/PickupsSpawner.tscn
 res://World/WorldEnv.tres
 res://UI/HeaderSettings.tres
-res://PowerUps/CardScripts/EssencePickupBoostCard.gd
+res://World/Pickups/PickupsSpawner.gd
+res://GlobalInfo.tscn
+res://GlobalInfo.gd
 res://PowerUps/Cards/EssencePickupBoostCard.tscn
+res://PowerUps/CardScripts/EssencePickupBoostCard.gd
 res://World/Main.tscn
 res://World/Pickups/ManaPickup.tscn
-res://World/Pickups/ManaPickup.gd
+res://MagicBullet/MagicBullet.tscn

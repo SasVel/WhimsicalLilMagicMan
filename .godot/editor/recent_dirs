@@ -1,7 +1,9 @@
+res://Player
+res://Effects/CustomEffects
+res://Effects
 res://Bullets
 res://Shaders
 res://Enemies
-res://Player
 res://PowerUps/CardScripts
 res://PowerUps/Cards
 res://PowerUps
@@ -18,5 +20,3 @@ res://UI/GameOverUI
 res://UI/MainMenuUI
 res://UI/Background
 res://UI/Buttons/YellowButton
-res://UI/PauseUI
-res://World/Rooms/DoorObjects

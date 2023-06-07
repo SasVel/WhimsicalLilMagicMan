@@ -1,3 +1,5 @@
+TextureRect
+Timer
 CollisionShape2D
 Area2D
 AnimationPlayer
@@ -7,11 +9,9 @@ Label
 Button
 CanvasLayer
 NinePatchRect
-Timer
 AudioStreamPlayer
 HSlider
 RichTextLabel
-TextureRect
 TextureButton
 NavigationObstacle2D
 NavigationRegion2D

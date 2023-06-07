@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var gem = $StaffSprite/GemPivot/GemSprite
 var gemPos
 
+signal staff_ready
 func _physics_process(delta):
 		self.rotation = lerp_angle(rotation, rotation + self.get_angle_to(get_global_mouse_position()) + deg_to_rad(90), 0.2)
 	
@@ -20,4 +21,5 @@ func _physics_process(delta):
 		
 		gemPos = gem.global_position
 
-	
+func _on_ready():
+	SpellController.staff = self

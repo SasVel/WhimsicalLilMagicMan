@@ -77,3 +77,5 @@ libraries = {
 [node name="HitBox" parent="." instance=ExtResource("4_nubqe")]
 collision_layer = 2
 collision_mask = 0
+
+[connection signal="ready" from="." to="." method="_on_ready"]

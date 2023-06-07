@@ -1,21 +1,27 @@
 extends Node2D
+
 @onready var BaseBullet = preload("res://Bullets/MagicBullet.tscn")
 @onready var BigBullet = preload("res://Bullets/BigMagicBullet.tscn")
 @onready var ExplosionBullet = preload("res://Bullets/ExplodingMagicBullet.tscn")
 
-
 @onready var shootTimer = $ShootTimer
-@onready var staff = self.get_parent().get_node("Staff")
+@onready var staff
 var canShoot = true
 
 @onready var whooshPlayer = $WhooshPlayer
 
+signal changed_spell(val)
 enum spellEnum {
 	BASE,
 	BIG_BULLET,
 	EXPLOSION_BULLET
 }
-var selectedSpell = spellEnum.EXPLOSION_BULLET
+@onready var selectedSpell : set = set_spell
+@onready var selectedSpellModel
+
+func set_spell(val):
+	emit_signal("changed_spell", val)
+	selectedSpell = val
 
 func shoot():
 	if canShoot:
@@ -27,8 +33,8 @@ func shoot():
 			spellEnum.EXPLOSION_BULLET:
 				bullet_spawn(ExplosionBullet)
 			
-func bullet_spawn(Bullet):
-	var bullet = Bullet.instantiate()
+func bullet_spawn(BulletScn):
+	var bullet = BulletScn.instantiate()
 	if PlayerStats.mana >= bullet.mana_cost:
 		bullet.position = staff.gemPos
 		

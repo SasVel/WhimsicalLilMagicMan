@@ -5,6 +5,7 @@ class_name ManaPickup
 
 func _ready():
 	GlobalInfo.world_state_changed.connect(pickup_activation)
+	GlobalInfo.room_change.connect(clear_pickup)
 	self.visible = false
 
 
@@ -18,4 +19,7 @@ func pickup_activation(val):
 
 func _on_body_entered(body):
 	PlayerStats.mana += mana_on_pickup
+	queue_free()
+
+func clear_pickup(val):
 	queue_free()

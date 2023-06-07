@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0t114q6yq2xf"]
+[gd_scene load_steps=10 format=3 uid="uid://c0t114q6yq2xf"]
 
 [ext_resource type="PackedScene" uid="uid://b006nt01voa0v" path="res://Bullets/MagicBullet.tscn" id="1_4lg08"]
 [ext_resource type="Script" path="res://Bullets/ExplodingMagicBullet.gd" id="2_wbjwm"]
+[ext_resource type="Script" path="res://Bullets/ExplosionRadius.gd" id="3_no22p"]
 
 [sub_resource type="Gradient" id="Gradient_3uxgv"]
 offsets = PackedFloat32Array(0, 0.980769)
@@ -42,7 +43,7 @@ radius = 28.0
 
 [node name="ExplodingMagicBullet" instance=ExtResource("1_4lg08")]
 script = ExtResource("2_wbjwm")
-explosionStrength = 1
+explosionStrength = 300
 mana_cost = 10
 
 [node name="GPUParticles2D" parent="." index="1"]
@@ -50,11 +51,19 @@ modulate = Color(0.984314, 0.564706, 0, 0.635294)
 process_material = SubResource("ParticleProcessMaterial_gg2un")
 
 [node name="ExplosionRadius" type="Area2D" parent="." index="2"]
+visible = false
 collision_layer = 0
 collision_mask = 20
+script = ExtResource("3_no22p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius" index="0"]
 shape = SubResource("CircleShape2D_pnstn")
+
+[node name="HitBox" parent="." index="3"]
+visible = false
+
+[node name="HurtBox" parent="." index="4"]
+visible = false
 
 [editable path="HitBox"]
 [editable path="HurtBox"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtxm74eavpcli"]
+
+[ext_resource type="PackedScene" uid="uid://kyuyb5042dv" path="res://Effects/ParticleEffect.tscn" id="1_8c2re"]
+[ext_resource type="Script" path="res://Effects/CustomEffects/ExplosionEffect.gd" id="2_32gmx"]
+
+[sub_resource type="Gradient" id="Gradient_wukmx"]
+offsets = PackedFloat32Array(0, 0.399038, 0.620192, 1)
+colors = PackedColorArray(0.905882, 0.67451, 0, 1, 1, 0.254902, 0.0705882, 1, 1, 0.254902, 0.0705882, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dj6u2"]
+gradient = SubResource("Gradient_wukmx")
+
+[sub_resource type="Curve" id="Curve_80xyt"]
+_data = [Vector2(0, 0.890909), 0.0, -0.0738363, 0, 0, Vector2(1, 0.254545), -0.636364, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
+curve = SubResource("Curve_80xyt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u0t0b"]
+resource_local_to_scene = true
+emission_shape = 1
+emission_sphere_radius = 5.88
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 45.8
+initial_velocity_max = 83.97
+angular_velocity_min = 21.98
+angular_velocity_max = 54.96
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = 3.05
+radial_accel_max = 3.05
+angle_min = -90.0
+angle_max = 90.0
+scale_min = 3.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_kjg5a")
+color_ramp = SubResource("GradientTexture1D_dj6u2")
+hue_variation_max = 0.1
+
+[node name="ExplosionEffect" instance=ExtResource("1_8c2re")]
+amount = 18
+process_material = SubResource("ParticleProcessMaterial_u0t0b")
+lifetime = 0.4
+preprocess = 2.0
+speed_scale = 1.5
+explosiveness = 0.85
+randomness = 0.4
+script = ExtResource("2_32gmx")
+
+[node name="KillTimer" type="Timer" parent="." index="0"]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

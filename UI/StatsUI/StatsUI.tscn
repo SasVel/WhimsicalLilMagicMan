@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cr4pgto0p0mnw"]
+[gd_scene load_steps=20 format=3 uid="uid://cr4pgto0p0mnw"]
 
 [ext_resource type="Script" path="res://UI/StatsUI/StatsUI.gd" id="1_sbfs8"]
 [ext_resource type="Texture2D" uid="uid://c1otdfwmwb15x" path="res://UI/StatsUI/Assets/HealthBarEmpty.png" id="2_op07q"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://tyj76s5s5kli" path="res://Effects/CustomEffects/HealthUI/ManaParticleEffect.tscn" id="9_4g4pe"]
 [ext_resource type="Texture2D" uid="uid://b8aellh44wfn7" path="res://UI/StatsUI/Assets/ManaRegenBarOver.png" id="9_4u77r"]
 [ext_resource type="Texture2D" uid="uid://c1iy0p2molnhx" path="res://UI/StatsUI/Assets/ManaRegenBarFill.png" id="10_vaf0t"]
+[ext_resource type="Texture2D" uid="uid://bkhg8b5l1haup" path="res://UI/StatsUI/Assets/SpellElementUI.png" id="13_ti5v2"]
 
 [sub_resource type="Curve" id="Curve_xg52y"]
 min_value = -1.0
@@ -28,7 +29,7 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
 curve = SubResource("Curve_80xyt")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ccyic"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kgblk"]
 resource_local_to_scene = true
 lifetime_randomness = 0.2
 emission_shape = 3
@@ -47,7 +48,7 @@ color = Color(0.937255, 0.141176, 0.172549, 1)
 hue_variation_max = 0.1
 hue_variation_curve = SubResource("CurveTexture_e8323")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oa337"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ceouh"]
 resource_local_to_scene = true
 lifetime_randomness = 0.2
 emission_shape = 3
@@ -112,8 +113,20 @@ texture_progress = ExtResource("10_vaf0t")
 
 [node name="HealthParticleEffect" parent="." instance=ExtResource("8_gpg2l")]
 position = Vector2(96, 20)
-process_material = SubResource("ParticleProcessMaterial_ccyic")
+process_material = SubResource("ParticleProcessMaterial_kgblk")
 
 [node name="ManaParticleEffect" parent="." instance=ExtResource("9_4g4pe")]
 position = Vector2(88, 42)
-process_material = SubResource("ParticleProcessMaterial_oa337")
+process_material = SubResource("ParticleProcessMaterial_ceouh")
+
+[node name="SpellSlot" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -20.0
+grow_vertical = 0
+texture = ExtResource("13_ti5v2")

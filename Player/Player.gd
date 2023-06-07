@@ -7,7 +7,6 @@ class_name Player
 @export var MAX_SPEED : float = 1500.0;
 var CURR_SPEED : float = SPEED;
 @onready var staff = $Staff
-@onready var spellsController = $SpellsController
 
 enum {
 	IDLE,
@@ -69,7 +68,7 @@ func _physics_process(delta):
 			GlobalInfo.worldState = GlobalInfo.worldStateEnum.MAIN
 	
 	if Input.is_action_pressed("shoot") && GlobalInfo.worldState == GlobalInfo.worldStateEnum.MAIN:
-		spellsController.shoot()
+		SpellController.shoot()
 	
 	GlobalInfo.playerPos = self.position
 	move_and_slide()

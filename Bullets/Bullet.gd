@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Bullet
 
 @export var SPEED = 300
 @export var mana_cost = 10

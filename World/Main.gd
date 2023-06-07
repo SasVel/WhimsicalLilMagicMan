@@ -7,6 +7,7 @@ var pastRooms = []
 @onready var player = $Player
 
 func _ready():
+	SpellController.selectedSpell = SpellController.spellEnum.BIG_BULLET
 	EnemyTracker.start_tracker()
 	GlobalInfo.room_change.connect(change_room)
 	load_rooms()
@@ -52,3 +53,4 @@ func set_player_position(doorVector):
 			door = activeRoom.get_node("DoorObjRight")
 			
 	player.global_position = door.position
+

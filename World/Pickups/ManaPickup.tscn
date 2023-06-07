@@ -10,7 +10,7 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
 curve = SubResource("Curve_80xyt")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2sbiv"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kojbk"]
 resource_local_to_scene = true
 lifetime_randomness = 0.2
 emission_shape = 1
@@ -37,7 +37,7 @@ script = ExtResource("1_hibpm")
 
 [node name="ParticleEffect" parent="." instance=ExtResource("1_gxujg")]
 amount = 15
-process_material = SubResource("ParticleProcessMaterial_2sbiv")
+process_material = SubResource("ParticleProcessMaterial_kojbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ga37f")

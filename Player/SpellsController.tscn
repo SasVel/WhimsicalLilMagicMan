@@ -1,23 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkc2wvmvtjts3"]
+[gd_scene load_steps=8 format=3 uid="uid://cvk3m02bwql5u"]
 
 [ext_resource type="Script" path="res://Player/SpellsController.gd" id="1_myfq4"]
-[ext_resource type="AudioStream" uid="uid://qdohspxsh26j" path="res://MagicBullet/Sounds/MagicMissleWhoosh01.ogg" id="2_4v4s3"]
-[ext_resource type="AudioStream" uid="uid://glse4mar72lf" path="res://MagicBullet/Sounds/MagicMissleWhoosh02.ogg" id="3_ts8ff"]
-[ext_resource type="AudioStream" uid="uid://eo7iw67g4gun" path="res://MagicBullet/Sounds/MagicMissleWhoosh03.ogg" id="4_cmnmx"]
-[ext_resource type="AudioStream" uid="uid://cso0m1naae4ga" path="res://MagicBullet/Sounds/MagicMissleWhoosh04.ogg" id="5_uewo0"]
-[ext_resource type="AudioStream" uid="uid://di5ka8h0vx03x" path="res://MagicBullet/Sounds/MagicMissleWhoosh05.ogg" id="6_g2mrl"]
+[ext_resource type="AudioStream" uid="uid://qdohspxsh26j" path="res://Bullets/Sounds/MagicMissleWhoosh01.ogg" id="2_usvoq"]
+[ext_resource type="AudioStream" uid="uid://glse4mar72lf" path="res://Bullets/Sounds/MagicMissleWhoosh02.ogg" id="3_liim0"]
+[ext_resource type="AudioStream" uid="uid://eo7iw67g4gun" path="res://Bullets/Sounds/MagicMissleWhoosh03.ogg" id="4_glvvk"]
+[ext_resource type="AudioStream" uid="uid://cso0m1naae4ga" path="res://Bullets/Sounds/MagicMissleWhoosh04.ogg" id="5_nch16"]
+[ext_resource type="AudioStream" uid="uid://di5ka8h0vx03x" path="res://Bullets/Sounds/MagicMissleWhoosh05.ogg" id="6_2kcd3"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2i2fb"]
 streams_count = 5
-stream_0/stream = ExtResource("2_4v4s3")
+stream_0/stream = ExtResource("2_usvoq")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("3_ts8ff")
+stream_1/stream = ExtResource("3_liim0")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("4_cmnmx")
+stream_2/stream = ExtResource("4_glvvk")
 stream_2/weight = 1.0
-stream_3/stream = ExtResource("5_uewo0")
+stream_3/stream = ExtResource("5_nch16")
 stream_3/weight = 1.0
-stream_4/stream = ExtResource("6_g2mrl")
+stream_4/stream = ExtResource("6_2kcd3")
 stream_4/weight = 1.0
 
 [node name="SpellsController" type="Node2D"]

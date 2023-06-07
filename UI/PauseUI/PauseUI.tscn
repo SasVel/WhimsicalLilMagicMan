@@ -21,9 +21,9 @@ script = ExtResource("1_14u5e")
 [node name="BackgroundForUI" parent="." instance=ExtResource("2_ccfv4")]
 layout_mode = 1
 offset_left = -120.0
-offset_top = -92.0
+offset_top = -132.0
 offset_right = 104.0
-offset_bottom = 148.0
+offset_bottom = 108.0
 
 [node name="PauseText" type="Label" parent="BackgroundForUI"]
 layout_mode = 1
@@ -46,6 +46,6 @@ horizontal_alignment = 1
 
 [node name="SoundSettingsUI" parent="." instance=ExtResource("3_8bujo")]
 offset_left = 200.0
-offset_top = 168.0
+offset_top = 128.0
 offset_right = 414.0
-offset_bottom = 328.0
+offset_bottom = 288.0

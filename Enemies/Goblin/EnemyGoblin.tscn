@@ -177,7 +177,7 @@ SPEED = 200
 MAX_SPEED = 500
 
 [node name="Stats" parent="." instance=ExtResource("2_j85s0")]
-max_health = 2
+max_health = 3
 
 [node name="MainSprite" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_f7x8r")

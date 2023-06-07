@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvbbbxamr8lqo"]
+[gd_scene load_steps=10 format=3 uid="uid://b006nt01voa0v"]
 
-[ext_resource type="Script" path="res://MagicBullet/MagicBullet.gd" id="1_0w5fa"]
-[ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="2_4khlr"]
-[ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="3_m8j2d"]
+[ext_resource type="Script" path="res://Bullets/Bullet.gd" id="1_x6kvf"]
+[ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="2_s2l3q"]
+[ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="3_fokkb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_du8i2"]
 radius = 2.0
@@ -32,15 +32,15 @@ scale_max = 4.0
 scale_curve = SubResource("CurveTexture_kjg5a")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jk753"]
-radius = 4.0
+radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubrv5"]
-radius = 4.0
+radius = 6.0
 
 [node name="MagicBullet" type="CharacterBody2D"]
 collision_layer = 2
 motion_mode = 1
-script = ExtResource("1_0w5fa")
+script = ExtResource("1_x6kvf")
 mana_cost = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -54,14 +54,14 @@ lifetime = 0.5
 speed_scale = 3.0
 explosiveness = 0.15
 
-[node name="HitBox" parent="." instance=ExtResource("2_4khlr")]
+[node name="HitBox" parent="." instance=ExtResource("2_s2l3q")]
 collision_layer = 2
 collision_mask = 20
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_jk753")
 
-[node name="HurtBox" parent="." instance=ExtResource("3_m8j2d")]
+[node name="HurtBox" parent="." instance=ExtResource("3_fokkb")]
 collision_layer = 64
 collision_mask = 5
 collision_priority = 2.0

@@ -1,9 +1,9 @@
 res://default_bus_layout.tres
-res://World/Main.tscn
+res://World/Tiles/RoomTiles.tscn
 res://World/WorldEnv.tres
 res://UI/HeaderSettings.tres
 res://Shaders/BlinkShader.gdshader
-res://Enemies/EnemyMaterial.tres
+res://World/Main.tscn
 res://World/Pickups/ManaPickup.tscn
 res://MagicBullet/MagicBullet.tscn
 res://World/Pickups/PickupsSpawner.tscn
@@ -12,3 +12,9 @@ res://Player/Player.tscn
 res://Player/SpellsController.tscn
 res://Enemies/Goblin/EnemyGoblin.tscn
 res://World/Rooms/DungeonRooms/Room1.tscn
+res://UI/PauseUI/PauseUI.tscn
+res://Player/SpellsController.gd
+res://Bullets/MagicBullet.tscn
+res://Bullets/BigMagicBullet.tscn
+res://Bullets/ExplodingMagicBullet.tscn
+res://Bullets/ExplodingMagicBullet.gd

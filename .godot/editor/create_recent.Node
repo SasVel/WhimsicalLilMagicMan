@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 AnimationPlayer
 Control
 LinkButton
@@ -8,8 +10,6 @@ NinePatchRect
 Timer
 AudioStreamPlayer
 HSlider
-CollisionShape2D
-Area2D
 RichTextLabel
 TextureRect
 TextureButton

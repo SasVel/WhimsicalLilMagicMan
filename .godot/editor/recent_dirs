@@ -1,3 +1,4 @@
+res://Bullets
 res://Shaders
 res://Enemies
 res://Player
@@ -19,4 +20,3 @@ res://UI/Background
 res://UI/Buttons/YellowButton
 res://UI/PauseUI
 res://World/Rooms/DoorObjects
-res://World/Pickups

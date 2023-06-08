@@ -1,3 +1,4 @@
+res://
 res://Player
 res://Effects/CustomEffects
 res://Effects
@@ -19,4 +20,3 @@ res://UI/GameCompleteUI
 res://UI/GameOverUI
 res://UI/MainMenuUI
 res://UI/Background
-res://UI/Buttons/YellowButton

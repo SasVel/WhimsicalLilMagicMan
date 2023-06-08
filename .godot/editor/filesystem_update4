@@ -1,25 +1,4 @@
 res://default_bus_layout.tres
-res://Bullets/ExplodingMagicBullet.tscn
-res://UI/StatsUI/SpellSlot.gd
-res://Interaction Boxes/HurtBox.tscn
-res://Interaction Boxes/HitBox.tscn
-res://Effects/ParticleEffect.tscn
-res://World/Pickups/ManaPickup.tscn
-res://GlobalInfo.tscn
-res://Player/PlayerStats.tscn
-res://UI/StatsUI/StatsUI.tscn
-res://Player/SpellsController.tscn
-res://Bullets/MagicBullet.tscn
+res://GlobalLoader.tscn
+res://GlobalLoader.gd
 res://Player/SpellsController.gd
-res://Player/Player.tscn
-res://Player/Player.gd
-res://UI/StatsUI/StatsUI.gd
-res://Player/Staff/Staff.gd
-res://Player/Staff/Staff.tscn
-res://PowerUps/CardScripts/ShootSpeedUpCard.gd
-res://World/Main.gd
-res://World/Main.tscn
-res://World/WorldEnv.tres
-res://UI/HeaderSettings.tres
-res://Mouse/MouseObject.gd
-res://Mouse/MouseObject.tscn

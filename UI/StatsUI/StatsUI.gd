@@ -5,10 +5,6 @@ extends Control
 @onready var cooldownBar = $CooldownBar
 @onready var spellSlot = $SpellSlot
 
-@onready var BaseBullet = preload("res://Bullets/MagicBullet.tscn")
-@onready var BigBullet = preload("res://Bullets/BigMagicBullet.tscn")
-@onready var ExplosionBullet = preload("res://Bullets/ExplodingMagicBullet.tscn")
-
 func _ready():
 	update_health()
 	update_mana()
@@ -47,23 +43,15 @@ func update_mana():
 func on_changed_spell(val):
 	match val:
 		SpellController.spellEnum.BASE:
-			display_bullet(BaseBullet)
+			display_bullet(Loader.BaseBullet)
 		SpellController.spellEnum.BIG_BULLET:
-			display_bullet(BigBullet)
+			display_bullet(Loader.BigBullet)
 		SpellController.spellEnum.EXPLOSION_BULLET:
-			display_bullet(ExplosionBullet)
+			display_bullet(Loader.ExplosionBullet)
 			
 func display_bullet(BulletScn):
 	var bullet = BulletScn.instantiate() as Bullet
-	var bulletParticles = bullet.get_node("GPUParticles2D")
-	
-	bullet.SPEED = 0
-	bulletParticles.speed_scale = 0.3
-	bullet.get_node("HitBox").monitorable = false
-	bullet.get_node("HurtBox").monitoring = false
+	bullet = SpellHelper.convert_spell_for_display(bullet)
 	
 	bullet.position = Vector2(20, 20)
-	bulletParticles.scale *= 2
-	bulletParticles.process_material.scale_min *= 2
-	bulletParticles.process_material.scale_max *= 2
 	spellSlot.add_child(bullet)

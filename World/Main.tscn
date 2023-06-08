@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=11 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Script" path="res://World/Main.gd" id="1_ou5ja"]
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bagkri8f5pwal" path="res://PowerUps/PowerUpManager.tscn" id="5_x4rxu"]
 [ext_resource type="PackedScene" uid="uid://cr4pgto0p0mnw" path="res://UI/StatsUI/StatsUI.tscn" id="5_yhy40"]
 [ext_resource type="PackedScene" uid="uid://cb6gmjn2sr368" path="res://UI/PauseUI/PauseUI.tscn" id="6_84hs3"]
-[ext_resource type="PackedScene" uid="uid://cqqp6cjqwid1w" path="res://World/Pickups/ManaPickup.tscn" id="7_b1n6y"]
 [ext_resource type="PackedScene" uid="uid://2ojvvwqeftmm" path="res://UI/GameOverUI/GameOverUI.tscn" id="7_wcexn"]
 [ext_resource type="PackedScene" uid="uid://duwstrcc1okos" path="res://UI/GameCompleteUI/GameCompleteUI.tscn" id="8_8jmpy"]
 
@@ -17,6 +16,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(660, 23, 658, 390, 13, 394, 12, 24)])
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ou5ja")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -26,6 +26,7 @@ environment = ExtResource("1_shwuh")
 navigation_polygon = SubResource("NavigationPolygon_lgxgr")
 
 [node name="ActiveRoom" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="StartRoom" parent="ActiveRoom" instance=ExtResource("3_gjgy4")]
 script = null
@@ -50,6 +51,3 @@ visible = false
 
 [node name="PowerUpManager" parent="UI" instance=ExtResource("5_x4rxu")]
 visible = false
-
-[node name="ManaPickup" parent="." instance=ExtResource("7_b1n6y")]
-position = Vector2(216, 143)

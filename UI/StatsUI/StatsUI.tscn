@@ -29,7 +29,7 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
 curve = SubResource("Curve_80xyt")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kgblk"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_40lnp"]
 resource_local_to_scene = true
 lifetime_randomness = 0.2
 emission_shape = 3
@@ -48,7 +48,7 @@ color = Color(0.937255, 0.141176, 0.172549, 1)
 hue_variation_max = 0.1
 hue_variation_curve = SubResource("CurveTexture_e8323")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ceouh"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bjc5f"]
 resource_local_to_scene = true
 lifetime_randomness = 0.2
 emission_shape = 3
@@ -113,11 +113,11 @@ texture_progress = ExtResource("10_vaf0t")
 
 [node name="HealthParticleEffect" parent="." instance=ExtResource("8_gpg2l")]
 position = Vector2(96, 20)
-process_material = SubResource("ParticleProcessMaterial_kgblk")
+process_material = SubResource("ParticleProcessMaterial_40lnp")
 
 [node name="ManaParticleEffect" parent="." instance=ExtResource("9_4g4pe")]
 position = Vector2(88, 42)
-process_material = SubResource("ParticleProcessMaterial_ceouh")
+process_material = SubResource("ParticleProcessMaterial_bjc5f")
 
 [node name="SpellSlot" type="TextureRect" parent="."]
 layout_mode = 1

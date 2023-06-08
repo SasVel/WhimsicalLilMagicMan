@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b006nt01voa0v"]
+[gd_scene load_steps=10 format=3 uid="uid://c0jorkgej4bxq"]
 
-[ext_resource type="Script" path="res://Bullets/Bullet.gd" id="1_x6kvf"]
-[ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="2_s2l3q"]
-[ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="3_fokkb"]
+[ext_resource type="Script" path="res://Spells/Bullet.gd" id="1_tbxj2"]
+[ext_resource type="PackedScene" uid="uid://c485f0w3fc2fr" path="res://Interaction Boxes/HitBox.tscn" id="2_sfc63"]
+[ext_resource type="PackedScene" uid="uid://ye6sscbkfm3t" path="res://Interaction Boxes/HurtBox.tscn" id="3_fy5se"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_du8i2"]
 radius = 2.0
@@ -40,7 +40,7 @@ radius = 6.0
 [node name="MagicBullet" type="CharacterBody2D"]
 collision_layer = 2
 motion_mode = 1
-script = ExtResource("1_x6kvf")
+script = ExtResource("1_tbxj2")
 mana_cost = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -54,14 +54,14 @@ lifetime = 0.5
 speed_scale = 3.0
 explosiveness = 0.15
 
-[node name="HitBox" parent="." instance=ExtResource("2_s2l3q")]
+[node name="HitBox" parent="." instance=ExtResource("2_sfc63")]
 collision_layer = 2
 collision_mask = 20
 
 [node name="CollisionShape2D" parent="HitBox" index="0"]
 shape = SubResource("CircleShape2D_jk753")
 
-[node name="HurtBox" parent="." instance=ExtResource("3_fokkb")]
+[node name="HurtBox" parent="." instance=ExtResource("3_fy5se")]
 collision_layer = 64
 collision_mask = 5
 collision_priority = 2.0

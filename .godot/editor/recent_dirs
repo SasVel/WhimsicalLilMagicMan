@@ -1,8 +1,8 @@
+res://Spells/SpellChest/Assets
 res://
 res://Player
 res://Effects/CustomEffects
 res://Effects
-res://Bullets
 res://Shaders
 res://Enemies
 res://PowerUps/CardScripts
@@ -19,4 +19,3 @@ res://UI/SoundSettingsUI
 res://UI/GameCompleteUI
 res://UI/GameOverUI
 res://UI/MainMenuUI
-res://UI/Background

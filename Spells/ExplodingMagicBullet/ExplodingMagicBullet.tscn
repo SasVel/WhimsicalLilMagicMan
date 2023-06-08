@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0t114q6yq2xf"]
+[gd_scene load_steps=10 format=3 uid="uid://chkwwl33pjxnu"]
 
-[ext_resource type="PackedScene" uid="uid://b006nt01voa0v" path="res://Bullets/MagicBullet.tscn" id="1_4lg08"]
-[ext_resource type="Script" path="res://Bullets/ExplodingMagicBullet.gd" id="2_wbjwm"]
-[ext_resource type="Script" path="res://Bullets/ExplosionRadius.gd" id="3_no22p"]
+[ext_resource type="PackedScene" uid="uid://c0jorkgej4bxq" path="res://Spells/BaseMagicBullet/MagicBullet.tscn" id="1_hr71i"]
+[ext_resource type="Script" path="res://Spells/ExplodingMagicBullet/ExplodingMagicBullet.gd" id="2_it5p7"]
+[ext_resource type="Script" path="res://Spells/ExplodingMagicBullet/ExplosionRadius.gd" id="3_kklr4"]
 
 [sub_resource type="Gradient" id="Gradient_3uxgv"]
 offsets = PackedFloat32Array(0, 0.980769)
@@ -41,8 +41,8 @@ hue_variation_max = 0.11
 [sub_resource type="CircleShape2D" id="CircleShape2D_pnstn"]
 radius = 28.0
 
-[node name="ExplodingMagicBullet" instance=ExtResource("1_4lg08")]
-script = ExtResource("2_wbjwm")
+[node name="ExplodingMagicBullet" instance=ExtResource("1_hr71i")]
+script = ExtResource("2_it5p7")
 explosionStrength = 300
 mana_cost = 10
 
@@ -54,7 +54,7 @@ process_material = SubResource("ParticleProcessMaterial_gg2un")
 visible = false
 collision_layer = 0
 collision_mask = 20
-script = ExtResource("3_no22p")
+script = ExtResource("3_kklr4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius" index="0"]
 shape = SubResource("CircleShape2D_pnstn")

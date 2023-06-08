@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://buufltv7us7p2"]
+[gd_scene load_steps=5 format=3 uid="uid://cc8b3es7b2x8g"]
 
-[ext_resource type="PackedScene" uid="uid://b006nt01voa0v" path="res://Bullets/MagicBullet.tscn" id="1_bsubg"]
+[ext_resource type="PackedScene" uid="uid://c0jorkgej4bxq" path="res://Spells/BaseMagicBullet/MagicBullet.tscn" id="1_8thj3"]
 
 [sub_resource type="Curve" id="Curve_80xyt"]
 _data = [Vector2(0, 0.890909), 0.0, -0.0738363, 0, 0, Vector2(1, 0.254545), -0.636364, 0.0, 1, 0]
@@ -26,7 +26,7 @@ scale_min = 2.0
 scale_max = 4.0
 scale_curve = SubResource("CurveTexture_kjg5a")
 
-[node name="BigMagicBullet" instance=ExtResource("1_bsubg")]
+[node name="BigMagicBullet" instance=ExtResource("1_8thj3")]
 SPEED = 200
 mana_cost = 10
 

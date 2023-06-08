@@ -4,6 +4,7 @@ extends Node2D
 @onready var activeRoom = $ActiveRoom/StartRoom
 var rooms = []
 var pastRooms = []
+var roomCounter = 0
 @onready var player = $Player
 
 func _ready():
@@ -31,6 +32,7 @@ func change_room(doorVector):
 	RoomFog.clearFog = false
 	activeRoomObj.add_child(activeRoom)
 	set_player_position(doorVector * -1)
+	roomCounter += 1
 	EnemyTracker.start_tracker()
 	
 func load_next_room():

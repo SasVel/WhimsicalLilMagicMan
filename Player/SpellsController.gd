@@ -25,13 +25,7 @@ func set_spell(val):
 
 func shoot():
 	if canShoot:
-		match selectedSpell:
-			spellEnum.BASE:
-				bullet_spawn(Loader.BaseBullet)
-			spellEnum.BIG_BULLET:
-				bullet_spawn(Loader.BigBullet)
-			spellEnum.EXPLOSION_BULLET:
-				bullet_spawn(Loader.ExplosionBullet)
+		bullet_spawn(SpellHelper.spell_enum_to_model(selectedSpell))
 			
 func bullet_spawn(BulletScn):
 	var bullet = BulletScn.instantiate()
@@ -49,8 +43,8 @@ func _on_shoot_timer_timeout():
 
 func spawn_spell_chest():
 	var mainScn = get_tree().get_root().get_node("/root/Main")
-	#if mainScn.roomCounter % 3 == 0:
-	var spellChest = SpellChest.instantiate()
-	spellChest.global_position = Vector2(336, 176)
-	mainScn.add_child(spellChest)
-	mainScn.move_child(spellChest, 3)
+	if mainScn.roomCounter % 3 == 0 && mainScn.roomCounter > 0:
+		var spellChest = SpellChest.instantiate()
+		spellChest.global_position = Vector2(336, 176)
+		mainScn.add_child(spellChest)
+		mainScn.move_child(spellChest, 3)

@@ -29,6 +29,9 @@ scale_curve = SubResource("CurveTexture_kjg5a")
 [node name="BigMagicBullet" instance=ExtResource("1_8thj3")]
 SPEED = 200
 mana_cost = 10
+enum_bullet_name = "BigBullet"
+display_name = "Big Magic Missle"
+description = "A big boy."
 
 [node name="GPUParticles2D" parent="." index="1"]
 amount = 30

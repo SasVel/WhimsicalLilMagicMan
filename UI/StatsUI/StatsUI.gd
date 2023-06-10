@@ -40,14 +40,9 @@ func update_mana():
 	manaBar.max_value = PlayerStats.max_mana
 	manaBar.value = PlayerStats.mana
 	
-func on_changed_spell(val):
-	match val:
-		SpellController.spellEnum.BASE:
-			display_bullet(Loader.BaseBullet)
-		SpellController.spellEnum.BIG_BULLET:
-			display_bullet(Loader.BigBullet)
-		SpellController.spellEnum.EXPLOSION_BULLET:
-			display_bullet(Loader.ExplosionBullet)
+func on_changed_spell(spellEnumVal):
+	clear_bullet()
+	display_bullet(SpellHelper.spell_enum_to_model(spellEnumVal))
 			
 func display_bullet(BulletScn):
 	var bullet = BulletScn.instantiate() as Bullet
@@ -55,3 +50,8 @@ func display_bullet(BulletScn):
 	
 	bullet.position = Vector2(20, 20)
 	spellSlot.add_child(bullet)
+
+func clear_bullet():
+	var spellSlotChildren = spellSlot.get_children()
+	for child in spellSlotChildren:
+		spellSlot.remove_child(child)

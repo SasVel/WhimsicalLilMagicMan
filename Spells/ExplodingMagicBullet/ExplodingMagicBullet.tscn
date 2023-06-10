@@ -45,6 +45,9 @@ radius = 28.0
 script = ExtResource("2_it5p7")
 explosionStrength = 300
 mana_cost = 10
+enum_bullet_name = "ExplosionBullet"
+display_name = "Exploding missle"
+description = "KABOOM?"
 
 [node name="GPUParticles2D" parent="." index="1"]
 modulate = Color(0.984314, 0.564706, 0, 0.635294)

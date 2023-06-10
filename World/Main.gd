@@ -20,7 +20,7 @@ func load_rooms():
 		dir.list_dir_begin()
 		var fileName = dir.get_next()
 		while fileName != "":
-			fileName = fileName.replace(".remap", "") 
+			fileName = fileName.replace(".remap", "")
 			rooms.append(ResourceLoader.load(path + fileName))
 			fileName = dir.get_next()
 

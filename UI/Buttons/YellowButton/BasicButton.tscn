@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://UI/Buttons/YellowButton/BasicButton.gd" id="3_3aiij"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_43820"]
+line_spacing = 0.0
 font_size = 25
 font_color = Color(0, 0, 0, 1)
 

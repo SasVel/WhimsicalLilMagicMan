@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://corwnty7sr8xh"]
+[gd_scene load_steps=11 format=3 uid="uid://corwnty7sr8xh"]
 
 [ext_resource type="Script" path="res://Spells/SpellChest/SpellChest.gd" id="1_td6o6"]
 [ext_resource type="Texture2D" uid="uid://by7eppwr7gj5f" path="res://Spells/SpellChest/Assets/chest_sprite_sheet.png" id="2_oqk16"]
-[ext_resource type="PackedScene" uid="uid://pav6643g05xq" path="res://PowerUps/PowerUpCard.tscn" id="3_pgper"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7bqff"]
 atlas = ExtResource("2_oqk16")
@@ -38,7 +37,7 @@ size = Vector2(28, 11)
 
 [sub_resource type="Animation" id="Animation_dpms4"]
 resource_name = "chest_open"
-length = 2.5
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -46,7 +45,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
+"times": PackedFloat32Array(0, 0.6, 1.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -86,29 +85,6 @@ libraries = {
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_u8gwt")
 
-[node name="LootUI" type="Control" parent="."]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 0
-mouse_filter = 2
-
-[node name="LootCard" parent="LootUI" instance=ExtResource("3_pgper")]
-layout_mode = 1
-offset_left = -47.0
-offset_top = -164.0
-offset_right = 48.0
-offset_bottom = -34.0
-
-[node name="Header" parent="LootUI/LootCard/Background" index="0"]
-text = "New Spell found!"
-
-[node name="MainText" parent="LootUI/LootCard/Background" index="1"]
-visible = false
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="InteractableArea" to="." method="_on_interactable_area_body_entered"]
 [connection signal="body_exited" from="InteractableArea" to="." method="_on_interactable_area_body_exited"]
-[connection signal="pressed" from="LootUI/LootCard" to="." method="_on_loot_card_pressed"]
-
-[editable path="LootUI/LootCard"]

@@ -42,6 +42,9 @@ collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_tbxj2")
 mana_cost = 5
+enum_bullet_name = "BaseBullet"
+display_name = "Magic Missle"
+description = "Boring, but reliable!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_du8i2")

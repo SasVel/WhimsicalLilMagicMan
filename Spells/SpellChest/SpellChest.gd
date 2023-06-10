@@ -1,12 +1,12 @@
 extends Node2D
+class_name SpellChest
 
 @onready var spells = [Loader.BigBullet, Loader.ExplosionBullet]
 @onready var selectedSpell = spells[randi_range(0, spells.size() - 1)]
 @onready var interactArea = $InteractableArea
 @onready var playerInArea = false
 @onready var animPlayer = $AnimationPlayer
-@onready var lootUI = $LootUI
-@onready var lootCard = $LootUI/LootCard
+
 
 signal chest_opened(spell)
 func _ready():
@@ -17,11 +17,7 @@ func _input(event):
 		animPlayer.play("chest_open")
 
 func _on_animation_player_animation_finished(anim_name):
-	var spell = SpellHelper.convert_spell_for_display(selectedSpell.instantiate())
-	lootCard.add_child(spell)
-	
-	lootUI.visible = true
-	#get_tree().paused = true
+	emit_signal("chest_opened", selectedSpell)
 	
 func _on_interactable_area_body_entered(body):
 	playerInArea = true
@@ -31,6 +27,3 @@ func _on_interactable_area_body_exited(body):
 	
 func clear_chest(val):
 	self.queue_free()
-
-func _on_loot_card_pressed():
-	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://drr13fe8psdp8"]
+[gd_scene load_steps=12 format=3 uid="uid://drr13fe8psdp8"]
 
 [ext_resource type="Script" path="res://World/Main.gd" id="1_ou5ja"]
 [ext_resource type="Environment" uid="uid://t4qlgjmpxstg" path="res://World/WorldEnv.tres" id="1_shwuh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cb6gmjn2sr368" path="res://UI/PauseUI/PauseUI.tscn" id="6_84hs3"]
 [ext_resource type="PackedScene" uid="uid://2ojvvwqeftmm" path="res://UI/GameOverUI/GameOverUI.tscn" id="7_wcexn"]
 [ext_resource type="PackedScene" uid="uid://duwstrcc1okos" path="res://UI/GameCompleteUI/GameCompleteUI.tscn" id="8_8jmpy"]
+[ext_resource type="PackedScene" uid="uid://c5bst5vw356y1" path="res://UI/LootUI/LootUI.tscn" id="10_c8t1q"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lgxgr"]
 vertices = PackedVector2Array(660, 23, 658, 390, 13, 394, 12, 24)
@@ -51,3 +52,10 @@ visible = false
 
 [node name="PowerUpManager" parent="UI" instance=ExtResource("5_x4rxu")]
 visible = false
+
+[node name="LootUI" parent="UI" instance=ExtResource("10_c8t1q")]
+visible = false
+offset_left = 336.0
+offset_top = 240.0
+offset_right = 336.0
+offset_bottom = 240.0

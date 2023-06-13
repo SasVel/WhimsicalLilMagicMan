@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6ksilrg2jjbw"]
+
+[ext_resource type="PackedScene" uid="uid://c0jorkgej4bxq" path="res://Spells/BaseMagicBullet/MagicBullet.tscn" id="1_mvbk8"]
+
+[sub_resource type="Curve" id="Curve_80xyt"]
+_data = [Vector2(0, 0.890909), 0.0, -0.0738363, 0, 0, Vector2(1, 0.254545), -0.636364, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kjg5a"]
+curve = SubResource("Curve_80xyt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5pbbj"]
+resource_local_to_scene = true
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(2, 2, 2)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 4.49
+linear_accel_max = 31.47
+angle_min = -90.0
+angle_max = 90.0
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_kjg5a")
+
+[sub_resource type="Animation" id="Animation_nnjln"]
+resource_name = "bullet_flying"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-7, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(7, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3bgpw"]
+_data = {
+"bullet_flying": SubResource("Animation_nnjln")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0lr31"]
+radius = 6.0
+height = 22.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5p7w"]
+radius = 6.0
+height = 22.0
+
+[node name="DoubleMagicBullet" instance=ExtResource("1_mvbk8")]
+mana_cost = 10
+enum_bullet_name = "DoubleBullet"
+display_name = "Double Missle"
+description = "Double the fun!"
+
+[node name="GPUParticles2D" parent="." index="1"]
+process_material = SubResource("ParticleProcessMaterial_5pbbj")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." index="2"]
+modulate = Color(0, 1, 1, 0.635294)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_5pbbj")
+lifetime = 0.5
+speed_scale = 3.0
+explosiveness = 0.15
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+autoplay = "bullet_flying"
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_3bgpw")
+}
+
+[node name="HitBox" parent="." index="4"]
+visible = false
+damage = 3
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0lr31")
+
+[node name="HurtBox" parent="." index="5"]
+visible = false
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_g5p7w")
+
+[editable path="HitBox"]
+[editable path="HurtBox"]

@@ -1,3 +1,5 @@
+res://Spells/DoubleMagicBullet
+res://Spells/BaseMagicBullet
 res://UI/LootUI
 res://Spells/SpellChest/Assets
 res://
@@ -18,5 +20,3 @@ res://UI/CreditsUI
 res://UI/SettingsUI
 res://UI/SoundSettingsUI
 res://UI/GameCompleteUI
-res://UI/GameOverUI
-res://UI/MainMenuUI

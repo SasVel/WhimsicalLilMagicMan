@@ -8,7 +8,7 @@ var roomCounter = 0
 @onready var player = $Player
 
 func _ready():
-	SpellController.selectedSpell = SpellController.spellEnum.BIG_BULLET
+	SpellController.selectedSpell = SpellController.spellEnum.DOUBLE_BULLET
 	EnemyTracker.start_tracker()
 	GlobalInfo.room_change.connect(change_room)
 	load_rooms()

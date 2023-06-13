@@ -1,6 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://c3cfb6de0att1"]
+[gd_scene load_steps=33 format=3]
 
-[ext_resource type="Script" path="res://Enemies/Goblin/Enemy.gd" id="1_h6it2"]
+[ext_resource type="Script" path="res://Enemies/Enemy.gd" id="1_h6it2"]
 [ext_resource type="Texture2D" uid="uid://bi40feqdeyljc" path="res://Enemies/Goblin/Assets/goblin_idle_spritesheet.png" id="1_qjhuy"]
 [ext_resource type="PackedScene" uid="uid://cm5wfph8jbxdj" path="res://Stats/Stats.tscn" id="2_j85s0"]
 [ext_resource type="Texture2D" uid="uid://bllflj4k84vmn" path="res://Enemies/Goblin/Assets/goblin_run_spritesheet.png" id="2_teonk"]

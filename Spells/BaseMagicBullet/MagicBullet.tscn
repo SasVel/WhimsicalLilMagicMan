@@ -32,10 +32,10 @@ scale_max = 4.0
 scale_curve = SubResource("CurveTexture_kjg5a")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jk753"]
-radius = 6.0
+radius = 9.05539
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ubrv5"]
-radius = 6.0
+radius = 9.05539
 
 [node name="MagicBullet" type="CharacterBody2D"]
 collision_layer = 2

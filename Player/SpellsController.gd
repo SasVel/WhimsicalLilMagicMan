@@ -10,7 +10,8 @@ signal changed_spell(val)
 enum spellEnum {
 	BASE,
 	BIG_BULLET,
-	EXPLOSION_BULLET
+	EXPLOSION_BULLET,
+	DOUBLE_BULLET
 }
 @onready var selectedSpell : set = set_spell
 @onready var selectedSpellModel
@@ -31,7 +32,7 @@ func bullet_spawn(BulletScn):
 	var bullet = BulletScn.instantiate()
 	if PlayerStats.mana >= bullet.mana_cost:
 		bullet.position = staff.gemPos
-		
+		bullet.rotation = staff.rotation
 		get_tree().get_root().add_child(bullet)
 		
 		whooshPlayer.play()

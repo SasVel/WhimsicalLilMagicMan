@@ -3,15 +3,23 @@ class_name SpellHelper
 
 static func convert_spell_for_display(bullet) -> Bullet:
 	var bulletParticles = bullet.get_node("GPUParticles2D")
+	var bulletParticles2 = bullet.get_node("GPUParticles2D2")
 	
 	bullet.SPEED = 0
-	bulletParticles.speed_scale = 0.3
 	bullet.get_node("HitBox").monitorable = false
 	bullet.get_node("HurtBox").monitoring = false
 	
-	bulletParticles.scale *= 2
-	bulletParticles.process_material.scale_min *= 2
-	bulletParticles.process_material.scale_max *= 2
+	bulletParticles.scale *= 1.5
+	bulletParticles.speed_scale = 0.3
+	bulletParticles.process_material.scale_min *= 1.5
+	bulletParticles.process_material.scale_max *= 1.5
+	
+	if bulletParticles2 != null:
+		bulletParticles2.scale *= 1.5
+		bulletParticles2.speed_scale = 0.3
+		bulletParticles2.process_material.scale_min *= 1.5
+		bulletParticles2.process_material.scale_max *= 1.5
+	
 	return bullet
 
 static func spell_enum_to_model(spell_enum) -> PackedScene:
@@ -22,10 +30,11 @@ static func spell_enum_to_model(spell_enum) -> PackedScene:
 			return Loader.BigBullet
 		SpellController.spellEnum.EXPLOSION_BULLET:
 			return Loader.ExplosionBullet
+		SpellController.spellEnum.DOUBLE_BULLET:
+			return Loader.DoubleBullet
 	return null
 
 static func spell_model_to_enum(spell_model):
-	#spell_model = spell_model as Bullet
 	match spell_model.instantiate().enum_bullet_name:
 		"BaseBullet":
 			return SpellController.spellEnum.BASE
@@ -33,4 +42,6 @@ static func spell_model_to_enum(spell_model):
 			return SpellController.spellEnum.BIG_BULLET
 		"ExplosionBullet":
 			return SpellController.spellEnum.EXPLOSION_BULLET
+		"DoubleBullet":
+			return SpellController.spellEnum.DOUBLE_BULLET
 	return null

@@ -1,3 +1,6 @@
+C:/Projects/Godot/Exported/MagicMan
+res://Lights/TorchLight
+res://Player/Assets
 res://Spells/DoubleMagicBullet
 res://Spells/BaseMagicBullet
 res://UI/LootUI
@@ -11,12 +14,9 @@ res://Enemies
 res://PowerUps/CardScripts
 res://PowerUps/Cards
 res://PowerUps
-C:/Projects/Godot/Exported/MagicMan
 res://Music
 res://World/Rooms/DungeonRooms
 res://World/Rooms
 res://UI
 res://UI/CreditsUI
 res://UI/SettingsUI
-res://UI/SoundSettingsUI
-res://UI/GameCompleteUI

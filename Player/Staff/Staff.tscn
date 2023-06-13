@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://vg0a2afxvfi6"]
+[gd_scene load_steps=11 format=3 uid="uid://vg0a2afxvfi6"]
 
 [ext_resource type="Script" path="res://Player/Staff/Staff.gd" id="1_ojjmi"]
 [ext_resource type="Texture2D" uid="uid://dhmsncx56xitr" path="res://Player/Staff/Assets/Staff_Hilt.png" id="2_wkuc6"]
@@ -7,6 +7,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ad8m"]
 size = Vector2(4.92186, 31.0701)
+
+[sub_resource type="Gradient" id="Gradient_g7wdr"]
+offsets = PackedFloat32Array(0, 0.464912)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aad5g"]
+gradient = SubResource("Gradient_g7wdr")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Animation" id="Animation_umquh"]
 length = 0.001
@@ -67,6 +76,11 @@ texture = ExtResource("2_wkuc6")
 position = Vector2(0, -9.5)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_31oct")
+
+[node name="PointLight2D" type="PointLight2D" parent="StaffSprite/GemPivot/GemSprite"]
+color = Color(0.180392, 0.952941, 1, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_aad5g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Staff_gem_move"

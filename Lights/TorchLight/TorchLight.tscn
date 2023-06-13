@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqs2jdr7gy4bv"]
+
+[sub_resource type="Gradient" id="Gradient_bfpt2"]
+offsets = PackedFloat32Array(0, 0.745614)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b7cng"]
+gradient = SubResource("Gradient_bfpt2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="TorchLight" type="PointLight2D"]
+color = Color(0.870588, 0.65098, 0.0470588, 1)
+texture = SubResource("GradientTexture2D_b7cng")

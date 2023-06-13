@@ -23,6 +23,11 @@ script = ExtResource("1_ou5ja")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_shwuh")
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.160784, 0.196078, 0.00784314, 1)
+energy = 0.2
+blend_mode = 1
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_lgxgr")
 

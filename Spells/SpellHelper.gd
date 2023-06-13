@@ -3,7 +3,6 @@ class_name SpellHelper
 
 static func convert_spell_for_display(bullet) -> Bullet:
 	var bulletParticles = bullet.get_node("GPUParticles2D")
-	var bulletParticles2 = bullet.get_node("GPUParticles2D2")
 	
 	bullet.SPEED = 0
 	bullet.get_node("HitBox").monitorable = false
@@ -14,7 +13,8 @@ static func convert_spell_for_display(bullet) -> Bullet:
 	bulletParticles.process_material.scale_min *= 1.5
 	bulletParticles.process_material.scale_max *= 1.5
 	
-	if bulletParticles2 != null:
+	if bullet.has_node("GPUParticles2D2"):
+		var bulletParticles2 = bullet.get_node("GPUParticles2D2")
 		bulletParticles2.scale *= 1.5
 		bulletParticles2.speed_scale = 0.3
 		bulletParticles2.process_material.scale_min *= 1.5

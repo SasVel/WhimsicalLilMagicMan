@@ -8,7 +8,7 @@ var roomCounter = 0
 @onready var player = $Player
 
 func _ready():
-	SpellController.selectedSpell = SpellController.spellEnum.DOUBLE_BULLET
+	SpellController.selectedSpell = SpellController.spellEnum.BASE
 	EnemyTracker.start_tracker()
 	GlobalInfo.room_change.connect(change_room)
 	load_rooms()
@@ -41,6 +41,7 @@ func load_next_room():
 		activeRoom = rooms.pop_at(randi_range(0, rooms.size() - 1)).instantiate()
 	else:
 		activeRoom = load("res://World/Rooms/FinalRoom.tscn").instantiate()
+		
 
 func set_player_position(doorVector):
 	var door

@@ -1,7 +1,9 @@
+DirectionalLight2D
+PointLight2D
+Node2D
 Node
 AnimationPlayer
 Control
-Node2D
 CanvasLayer
 CollisionShape2D
 Area2D
@@ -29,5 +31,3 @@ CharacterBody2D
 ColorRect
 RigidBody2D
 Camera2D
-TileMap
-AnimationTree

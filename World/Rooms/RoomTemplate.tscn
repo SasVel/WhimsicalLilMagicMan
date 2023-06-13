@@ -24,6 +24,8 @@ metadata/_edit_vertical_guides_ = [640.0, 16.0, 320.0, 352.0]
 
 [node name="RoomTiles" parent="." instance=ExtResource("1_xhcmm")]
 
+[node name="Lights" type="Node2D" parent="."]
+
 [node name="PickupsSpawner" parent="." instance=ExtResource("3_7144p")]
 position = Vector2(336, 176)
 

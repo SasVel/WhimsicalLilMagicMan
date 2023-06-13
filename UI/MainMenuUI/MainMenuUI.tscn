@@ -111,7 +111,7 @@ offset_top = 248.0
 offset_right = 352.0
 offset_bottom = 272.0
 underline = 2
-uri = "https://sasvel.itch.io/wimsiclelilmagicman"
+uri = "https://sasvel.itch.io/whimsicallilmagicman"
 
 [node name="ItchAsset" type="Sprite2D" parent="ItchBtn"]
 position = Vector2(12, 12)

@@ -65,7 +65,7 @@ visible = false
 position = Vector2(-8, 32)
 shape = SubResource("RectangleShape2D_b3j0r")
 
-[node name="DoorObjUp" parent="." index="6"]
+[node name="DoorObjUp" parent="." index="7"]
 position = Vector2(336, 105)
 
 [node name="CollisionShape2D" parent="DoorObjUp" index="0"]

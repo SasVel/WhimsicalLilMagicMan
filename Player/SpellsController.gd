@@ -43,9 +43,10 @@ func _on_shoot_timer_timeout():
 	canShoot = true
 
 func spawn_spell_chest():
-	var mainScn = get_tree().get_root().get_node("/root/Main")
-	if mainScn.roomCounter % 3 == 0 && mainScn.roomCounter > 0:
-		var spellChest = SpellChest.instantiate()
-		spellChest.global_position = Vector2(336, 176)
-		mainScn.add_child(spellChest)
-		mainScn.move_child(spellChest, 3)
+	if get_tree().get_root().has_node("/root/Main"):
+		var mainScn = get_tree().get_root().get_node("/root/Main")
+		if mainScn.roomCounter % 3 == 0 && mainScn.roomCounter > 0:
+			var spellChest = SpellChest.instantiate()
+			spellChest.global_position = Vector2(336, 176)
+			mainScn.add_child(spellChest)
+			mainScn.move_child(spellChest, 3)

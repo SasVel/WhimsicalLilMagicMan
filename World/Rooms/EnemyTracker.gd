@@ -5,6 +5,9 @@ signal no_enemies
 
 func start_tracker():
 	enemySpawnCheck.start()
+	
+func stop_tracker():
+	enemySpawnCheck.stop()
 
 func _on_enemy_spawn_check_timeout():
 	var enemies = self.get_overlapping_bodies()

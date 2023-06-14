@@ -12,8 +12,11 @@ func on_no_health():
 
 func _on_restart_btn_pressed():
 	get_tree().reload_current_scene()
-	PlayerStats.healh = PlayerStats.max_health
+	PlayerStats.reset_stats()
+	EnemyTracker.stop_tracker()
 	get_tree().paused = false
 
 func _on_main_menu_btn_pressed():
+	PlayerStats.reset_stats()
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/MainMenuUI/MainMenuUI.tscn")
